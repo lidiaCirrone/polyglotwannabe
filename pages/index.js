@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 // components
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 // styles
 import styles from '@/styles/Home.module.css'
@@ -28,6 +29,15 @@ export default function Home() {
             </div>
 
             <div className={styles.grid}>
+
+               <div className={[styles.center, {backgroundColor: "transparent"}]}>
+                  <Image
+                     src={"/images/profile_picture.png"}
+                     width={200}
+                     height={200}
+                     alt='profile picture'
+                  />
+               </div>
 
                <Link href="games/italiano" className={styles.card}>
                   <h2 className={inter.className}>
