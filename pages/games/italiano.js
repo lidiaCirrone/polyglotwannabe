@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 // components
 import Head from 'next/head';
 import Link from "next/link";
+import Layout from "../../components/layout"
 
 // styles
 import styles from '@/styles/Home.module.css'
@@ -12,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Italiano() {
    return (
-      <>
+      <Layout>
          <Head>
             <title>Italiano</title>
             <meta name="description" content="Italiano" />
@@ -33,6 +34,6 @@ export default function Italiano() {
                </Link>
             </div>
          </main>
-      </>
+      </Layout>
    )
 }
