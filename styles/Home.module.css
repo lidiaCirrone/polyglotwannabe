@@ -11,12 +11,16 @@
    align-items: center;
 }
 
+.tile:not(.tile-empty) {
+   transition: font-size .5s;
+}
+
 .tile-empty {
    cursor: default;
 }
 
 .tile:not(.tile-empty):hover {
-   opacity: .5;
+   font-size: 1.5rem;
 }
 
 .tile1 {
