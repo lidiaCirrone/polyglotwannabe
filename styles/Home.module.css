@@ -64,6 +64,10 @@
    .tile {
       height: 33.3vh;
    }
+
+   .tile-empty {
+      grid-column: 2 / span 2;
+   }
 }
 
 /* Desktops and large screens */
