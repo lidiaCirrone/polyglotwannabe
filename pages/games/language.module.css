@@ -1,0 +1,14 @@
+.container {
+   padding: 1rem;
+}
+
+.navigation {
+   margin-bottom: 1rem;
+   font-size: .8rem;
+   font-style: italic
+}
+
+.home:hover, .back:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
