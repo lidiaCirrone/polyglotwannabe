@@ -22,7 +22,7 @@ export default function Home() {
    }
 
    return (
-      <Layout pageName={"polyglot wanna be"} pageDescription={"unsolicited facts about languages"}>
+      <Layout pageName={"polyglot wannabe"} pageDescription={"unsolicited facts about languages"}>
          <main>
             <section className={styles["tiles-container"]}>
                {languages.map(renderLanguageTile)}
