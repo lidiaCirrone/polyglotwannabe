@@ -1,0 +1,65 @@
+/* duolingo */
+
+.section {
+   display: flex;
+   align-items: center
+}
+
+.duoBox {
+   flex: 1;
+   margin-left: 1rem
+}
+
+.duoBox a {
+   font-weight: bold;
+}
+
+.profile-picture {
+   width: 20vw;
+   border-radius: 50%
+}
+
+.flag {
+   margin: 0 0.1rem
+}
+
+
+
+/* news */
+
+.flex {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.flex-item {
+   box-sizing: border-box;
+   text-align: justify;
+   margin-bottom: 1rem;
+}
+
+.flex-item img {
+   max-width: 100%;
+}
+
+.flex-item h4 a {
+   color: #333;
+}
+
+.flex-item h4 a:hover {
+   color: #555;
+}
+
+.flex-item p.date {
+   font-size: 11px;
+   text-align: right;
+   margin-bottom: 0;
+}
+
+@media (min-width: 577px) {
+   .flex-item {
+      width: 32%;
+      margin-bottom: 0;
+   }
+}

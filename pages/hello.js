@@ -1,22 +1,28 @@
 // components
 import Layout from '@/components/layout';
+import NavigationBar from '@/components/ui/navigationBar';
+import NewsWidget from '@/components/widgets/newsWidget/newsWidget';
 
 // modules
 import { useRouter } from 'next/router';
 
 // styles
 import styles from '@/styles/Home.module.css'
+import { languages } from '@/utils/globalVariables';
 
 export default function Hello() {
    const router = useRouter();
    // To-DO: get language from global
-   const language = router?.query?.language ?? "en";
-   console.log(JSON.stringify(router.query, null, 2));
+   const code = router?.query?.language ?? "en";
+   const language = languages.find(item => item.code === code)
+   console.log(JSON.stringify(router?.query, null, 2));
 
    return (
       <Layout>
          <main className={styles.main}>
-            set language: {language}
+            <NavigationBar />
+            <p>You've chosen: {language.label}</p>
+            <NewsWidget language={code} />
          </main>
       </Layout>
    )
