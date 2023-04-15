@@ -1,17 +1,12 @@
-import { Raleway } from 'next/font/google'
+import localFont from 'next/font/local'
 import '@/styles/globals.css'
 
-const raleway = Raleway({ subsets: ['latin'] })
+const raleway = localFont({ src: '../fonts/Raleway-VariableFont_wght.ttf' })
 
 export default function App({ Component, pageProps }) {
    return (
-      <>
-         <style jsx global>{`
-       html {
-         font-family: ${raleway.style.fontFamily};
-       }
-     `}</style>
-         <Component {...pageProps} />
-      </>
+      <main className={raleway.className}>
+         <Component  {...pageProps} />
+      </main>
    )
 }
