@@ -90,8 +90,20 @@ a {
    text-decoration: none;
 }
 
+a:hover {
+   text-decoration: underline;
+}
+
+ul {
+   list-style-type: none;
+}
+
 .margin-bottom {
    margin-bottom: 1rem;
+}
+
+.margin-right {
+   margin-right: 0.2rem;
 }
 
 @media (prefers-color-scheme: dark) {
