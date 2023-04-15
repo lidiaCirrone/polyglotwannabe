@@ -98,6 +98,29 @@ ul {
    list-style-type: none;
 }
 
+.button {
+   cursor: pointer;
+   width: 20vw;
+   padding: 2vw;
+   margin: 0 auto;
+   color: #b1b1b1;
+   font-weight: bold;
+   text-transform: uppercase;
+   text-align: center;
+   border: 2px solid #b1b1b1;
+   border-radius: 10px;
+}
+
+.button a:hover {
+   text-decoration: none;
+}
+
+.button:hover {
+   color: #39bdff;
+   border-color: #39bdff;
+
+}
+
 .margin-bottom {
    margin-bottom: 1rem;
 }
