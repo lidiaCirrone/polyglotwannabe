@@ -1,7 +1,8 @@
 // components
 import Layout from '@/components/layout';
 import DuolingoWidget from '@/components/duolingoWidget';
-import LanguageTiles from '@/components/languageTiles';
+import Button from '@/components/ui/button';
+// import LanguageTiles from '@/components/languageTiles';
 
 // styles
 import styles from '@/styles/Home.module.css'
@@ -11,7 +12,8 @@ export default function Home() {
       <Layout pageName={"polyglot wannabe"} pageDescription={"unsolicited facts about languages"}>
          <main className={styles.main}>
             <DuolingoWidget />
-            <LanguageTiles />
+            <Button label={"next"} href={"/hello"} />
+            {/* <LanguageTiles /> */}
          </main>
       </Layout>
    )
