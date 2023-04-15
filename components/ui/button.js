@@ -1,8 +1,18 @@
-// components
-import Link from 'next/link';
+// modules
+import { useRouter } from 'next/router';
 
-export default function Button({ href, label }) {
+export default function Button({ href, label, query }) {
+   const router = useRouter();
+
+   const goTo = () => {
+      let args = {
+         pathname: `${href}`,
+      }
+      if (query) args.query = query;
+      router.push(args)
+   }
+
    return (
-      <div className={"button"}><Link href={href}>{label}</Link></div>
+      <div className={"button"} onClick={goTo}>{label}</div>
    )
 }
