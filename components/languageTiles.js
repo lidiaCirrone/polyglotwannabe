@@ -5,7 +5,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 // styles
-import styles from '@/styles/LanguageTiles.module.css'
+import styles from './languageTiles.module.css'
 
 // utils
 import { languages } from '@/utils/globalVariables'

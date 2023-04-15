@@ -1,6 +1,6 @@
 // components
 import Layout from '@/components/layout';
-import DuolingoWidget from '@/components/duolingoWidget';
+import DuolingoWidget from '@/components/widgets/duolingoWidget';
 import Button from '@/components/ui/button';
 // import LanguageTiles from '@/components/languageTiles';
 

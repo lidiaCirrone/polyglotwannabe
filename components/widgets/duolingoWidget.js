@@ -10,7 +10,7 @@ import Link from 'next/link';
 import clsx from 'clsx'
 
 // styles
-import styles from '@/styles/DuolingoWidget.module.css'
+import styles from './widgets.module.css'
 
 // utils
 import { sortCourses } from '@/utils/sorting';
