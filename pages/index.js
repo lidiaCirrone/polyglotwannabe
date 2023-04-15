@@ -12,8 +12,8 @@ import clsx from 'clsx'
 import styles from '@/styles/Home.module.css'
 
 // utils
-import { languages } from '@/utils/globalVariables'
 import { sortCourses } from '@/utils/sorting';
+import LanguageTiles from '@/components/languageTiles';
 
 export async function getStaticProps() {
    const userDataUrl = 'https://api.duolingo.com/2017-06-30/users/94105502?fields=courses,creationDate,learningLanguage,picture,totalXp,username,streak,trackingProperties';
@@ -59,10 +59,7 @@ export default function Home({ duoUserData }) {
                   {sortedCourses.map(renderCourses)}
                </ul>
             </section>
-            <section className={styles["tiles-container"]}>
-               {languages.map(renderLanguageTile)}
-               <div className={clsx([styles.tile, styles["tile-empty"]])}>who's next?</div>
-            </section>
+            <LanguageTiles />
          </main>
       </Layout>
    )
@@ -72,14 +69,6 @@ export default function Home({ duoUserData }) {
          <li key={`${source}-${key}`}>
             <img className={styles.flag} src={`/flags/${source}.svg`} width={20} /> → {targets.map(renderTargetLanguages)}
          </li>
-      )
-   }
-
-   function renderLanguageTile(language, index) {
-      return (
-         <Link href={`games/${language.slug}`} key={`language-${index}`}>
-            <div className={clsx([styles.tile, styles[`tile${index + 1}`]])}>{language.label}</div>
-         </Link>
       )
    }
 
