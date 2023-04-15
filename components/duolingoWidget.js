@@ -1,3 +1,8 @@
+import { useEffect, useState } from 'react';
+
+// api
+import { DUOLINGO_TOKEN } from '@/services/config';
+
 // components
 import Link from 'next/link';
 
@@ -9,33 +14,65 @@ import styles from '@/styles/DuolingoWidget.module.css'
 
 // utils
 import { sortCourses } from '@/utils/sorting';
+import { duolingoResources } from '@/services/api/duolingoApi';
 
-export default function DuolingoWidget({ data }) {
-   let date = new Date(data.creationDate * 1000);
+export default function DuolingoWidget() {
 
-   // TO-DO: set global locale
-   let creationDate = date.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
-   let sortedCourses = sortCourses(data.courses);
+   const [state, setState] = useState({
+      userData: {},
+      hasResponse: true,
+      creationDate: "",
+      courses: []
+   })
+
+   useEffect(() => {
+      (async () => {
+         let userData = state.userData;
+         let hasResponse = state.hasResponse;
+         let creationDate = state.creationDate;
+         let courses = state.courses;
+         try {
+            const res = await fetch(duolingoResources.userData, {
+               headers: { Authorization: `Bearer ${DUOLINGO_TOKEN}` }
+            })
+            userData = await res.json();
+            let date = new Date(userData.creationDate * 1000);
+            // TO-DO: set global locale
+            creationDate = date.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+            courses = sortCourses(userData.courses);
+         } catch (error) {
+            hasResponse = false;
+         }
+         setState({
+            userData,
+            hasResponse,
+            creationDate,
+            courses
+         })
+      })()
+   }, [])
+
+   if (state.courses.length === 0 || !state.hasResponse) return <p>No data...</p>
 
    return (
       <section className={"margin-bottom"}>
          <div className={clsx([styles.section, "margin-bottom"])}>
             <div>
-               <img src={`${data.picture}/xlarge`} className={styles["profile-picture"]} />
+               <img src={`${state.userData.picture}/xlarge`} className={styles["profile-picture"]} />
             </div>
             <div className={styles.duoBox}>
-               <p><Link href={"https://www.duolingo.com/profile/lidiaCirrone"} target={"_blank"}>{data.username}</Link> </p>
-               <p>aspiring polyglot since {creationDate}</p>
-               <p><img className={"margin-right"} src={`/icons/streak.svg`} width={16} /> {data.streak}</p>
-               <p><img className={"margin-right"} src={`/icons/crowns.svg`} width={20} />  {data.totalXp}</p>
+               <p><Link href={"https://www.duolingo.com/profile/lidiaCirrone"} target={"_blank"}>{state.userData.username}</Link> </p>
+               <p>aspiring polyglot since {state.creationDate}</p>
+               <p><img className={"margin-right"} src={`/icons/streak.svg`} width={16} /> {state.userData.streak}</p>
+               <p><img className={"margin-right"} src={`/icons/crowns.svg`} width={20} />  {state.userData.totalXp}</p>
                <p>
-                  currently learning <img className={styles.flag} src={`/flags/${data.learningLanguage}.svg`} width={20} /> from <img className={styles.flag} src={`/flags/${data.courses[0].fromLanguage}.svg`} width={20} />
+                  currently learning <img className={styles.flag} src={`/flags/${state.userData.learningLanguage}.svg`} width={20} /> from <img className={styles.flag} src={`/flags/${state.userData.courses[0].fromLanguage}.svg`} width={20} />
                </p>
             </div>
          </div>
          <p>also studied:</p>
          <ul>
-            {sortedCourses.map(renderCourses)}
+            {state.courses.map(renderCourses)}
          </ul>
       </section>
 
