@@ -1,6 +1,10 @@
 import Head from "next/head";
 
-export default function Layout({ pageName, pageDescription, children }) {
+export default function Layout({
+   pageName = "polyglot wannabe",
+   pageDescription = "unsolicited facts about languages",
+   children
+}) {
    return (
       <>
          <Head>
