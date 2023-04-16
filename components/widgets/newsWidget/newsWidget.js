@@ -19,27 +19,24 @@ export default function NewsWidget({ language }) {
    const [news, setNews] = useState([]);
 
    useEffect(() => {
-
       getNews(language).then(response => {
          console.log(language, response);
          setNews(response.articles);
          // setNews(response.articles.slice(0,3)); // shows only 3 articles, replace with number chosen by the user
       })
-
    }, [])
+
+   const renderNews = (article, i) => {
+      return <NewsArticle key={i} article={article} />
+   }
 
    if (news.length === 0) return <p>No data...</p>
 
    return (
       <section className={"margin-bottom"}>
          <div className={styles["flex"]}>
-            {
-               news.map((article, i) => {
-                  return <NewsArticle key={i} article={article} />
-               })
-            }
+            {news.map(renderNews)}
          </div>
       </section>
-
    )
 }
