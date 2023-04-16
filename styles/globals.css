@@ -97,6 +97,19 @@ ul {
    margin-right: 0.2rem;
 }
 
+.bold {
+   font-weight: bold;
+}
+
+.underline {
+   text-decoration: underline;
+}
+
+.small {
+   font-size: .8rem;
+   font-style: italic;
+}
+
 @media (prefers-color-scheme: dark) {
    html {
       color-scheme: dark;
