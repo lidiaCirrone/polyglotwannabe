@@ -22,7 +22,7 @@ export default function LanguageTiles() {
 function renderLanguageTile(language, index) {
    return (
       <Link href={`games/${language.slug}`} key={`language-${index}`}>
-         <div className={clsx([styles.tile, styles[`tile${index + 1}`]])}>{language.label}</div>
+         <div className={clsx([styles.tile, styles[`tile${index + 1}`]])}>{language.name}</div>
       </Link>
    )
 }

@@ -17,7 +17,7 @@ const Language = () => {
    const languageItem = languages.find(item => item.slug === language);
 
    return (
-      <Layout pageName={languageItem.label} pageDescription={languageItem.label}>
+      <Layout pageName={languageItem.name} pageDescription={languageItem.name}>
          <section className={styles.container}>
             <NavigationBar />
             <p className={"margin-bottom"}>language param inside router.query: {language}</p>

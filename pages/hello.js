@@ -21,7 +21,7 @@ export default function Hello() {
       <Layout>
          <main className={styles.main}>
             <NavigationBar />
-            <p>You've chosen: {language.label}</p>
+            <p>You've chosen: {language.name}</p>
             <NewsWidget language={code} />
          </main>
       </Layout>
