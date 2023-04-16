@@ -1,20 +1,11 @@
 // components
 import Layout from '@/components/layout';
-import DuolingoWidget from '@/components/widgets/duolingoWidget';
-import Button from '@/components/ui/button';
-// import LanguageTiles from '@/components/languageTiles';
-
-// styles
-import styles from '@/styles/Home.module.css'
+import LanguageTiles from '@/components/languageTiles';
 
 export default function Home() {
    return (
       <Layout>
-         <main className={styles.main}>
-            <DuolingoWidget />
-            <Button label={"next"} href={"/hello"} />
-            {/* <LanguageTiles /> */}
-         </main>
+         <LanguageTiles />
       </Layout>
    )
 }
