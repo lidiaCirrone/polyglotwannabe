@@ -2,26 +2,22 @@
 import Layout from '@/components/layout'
 import NavigationBar from '@/components/ui/navigationBar'
 
-// modules
-import { useRouter } from 'next/router'
+// redux
+import { useSelector } from 'react-redux'
 
 // styles
 import styles from './language.module.css'
 
-//utils
-import { languages } from '@/utils/globalVariables'
-
 const Language = () => {
-   const router = useRouter();
-   const { language } = router.query;
-   const languageItem = languages.find(item => item.slug === language);
+
+   const language = useSelector((state) => state.user.language);
+   // TO-DO: now that it's taken from redux, `router.query` may not correspond to language.slug!
 
    return (
-      <Layout pageName={languageItem.name} pageDescription={languageItem.name}>
+      <Layout pageName={language.name} pageDescription={language.name}>
          <section className={styles.container}>
             <NavigationBar />
-            <p className={"margin-bottom"}>language param inside router.query: {language}</p>
-            <p>language item inside array: {JSON.stringify(languageItem)}</p>
+            <p>language item from redux: {JSON.stringify(language)}</p>
          </section>
       </Layout>
    )

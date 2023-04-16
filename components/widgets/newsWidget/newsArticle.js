@@ -3,18 +3,22 @@ import React from 'react';
 // modules
 import clsx from 'clsx';
 
+// modules
+import { useSelector } from 'react-redux';
+
 // styles
 import styles from '../widgets.module.css'
 
-function NewsArticle({ article, locale = "en-GB" }) {
+function NewsArticle({ article }) {
 
+   const language = useSelector((state) => state.user.language);
    let options = {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric'
    };
-   let date = new Date(Date.parse(article.publishedAt)).toLocaleDateString(locale, options);
+   let date = new Date(Date.parse(article.publishedAt)).toLocaleDateString(language.locale, options);
 
    return (
       <>
