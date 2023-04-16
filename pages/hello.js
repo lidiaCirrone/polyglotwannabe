@@ -22,8 +22,10 @@ export default function Hello() {
          <div className={"margin"}>
             <NavigationBar />
             <p>You've chosen: {language.name}</p>
+            <h2>Duolingo Stats</h2>
             <DuolingoWidget />
             {/* <Button label={"next"} href={"/hello"} /> */}
+            <h2>News</h2>
             <NewsWidget language={code} />
          </div>
       </Layout>
