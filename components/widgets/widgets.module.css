@@ -52,11 +52,11 @@
 }
 
 .flex-item h4 a {
-   color: #333;
+   color: var(--heading);
 }
 
 .flex-item h4 a:hover {
-   color: #555;
+   color: var(--heading-hover);
 }
 
 .flex-item p.date {

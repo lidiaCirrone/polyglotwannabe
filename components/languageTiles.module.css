@@ -5,6 +5,7 @@
 
 .tile {
    cursor: pointer;
+   color: #000;
    height: 25vh;
    padding: 1rem;
    display: flex;
@@ -57,7 +58,7 @@
 }
 
 .tile-empty {
-   background-color: white;
+   color: var(--primary)
 }
 
 /* Tablets and small screens */
