@@ -7,9 +7,6 @@ import { useRouter } from 'next/router'
 // styles
 import styles from './ui.module.css'
 
-//utils
-import clsx from 'clsx'
-
 export default function NavigationBar() {
    const router = useRouter();
 
