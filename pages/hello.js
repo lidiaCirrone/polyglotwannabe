@@ -1,13 +1,13 @@
 // components
 import Layout from '@/components/layout';
 import NavigationBar from '@/components/ui/navigationBar';
+import DuolingoWidget from '@/components/widgets/duolingoWidget';
 import NewsWidget from '@/components/widgets/newsWidget/newsWidget';
 
 // modules
 import { useRouter } from 'next/router';
 
-// styles
-import styles from '@/styles/Home.module.css'
+// utils
 import { languages } from '@/utils/globalVariables';
 
 export default function Hello() {
@@ -19,11 +19,13 @@ export default function Hello() {
 
    return (
       <Layout>
-         <main className={styles.main}>
+         <div className={"margin"}>
             <NavigationBar />
             <p>You've chosen: {language.name}</p>
+            <DuolingoWidget />
+            {/* <Button label={"next"} href={"/hello"} /> */}
             <NewsWidget language={code} />
-         </main>
+         </div>
       </Layout>
    )
 }
