@@ -1,6 +1,9 @@
 // modules
 import { useRouter } from 'next/router';
 
+// styles
+import styles from './ui.module.css'
+
 export default function Button({ href, label, query }) {
    const router = useRouter();
 
@@ -13,6 +16,6 @@ export default function Button({ href, label, query }) {
    }
 
    return (
-      <div className={"button"} onClick={goTo}>{label}</div>
+      <div className={styles.button} onClick={goTo}>{label}</div>
    )
 }
