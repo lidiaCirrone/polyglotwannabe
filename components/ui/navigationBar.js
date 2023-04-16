@@ -17,7 +17,7 @@ export default function NavigationBar() {
       router.back();
    }
    return (
-      <p className={clsx([styles.navigation, "margin-bottom"])}>
+      <p className={styles.navigation}>
          <span className={styles.back} onClick={goBack}>
             ← go back
          </span>

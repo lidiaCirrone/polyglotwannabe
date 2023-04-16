@@ -122,6 +122,10 @@ ul {
 
 }
 
+.margin {
+   margin: 1rem;
+}
+
 .margin-bottom {
    margin-bottom: 1rem;
 }

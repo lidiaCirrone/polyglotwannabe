@@ -55,7 +55,7 @@ export default function DuolingoWidget() {
    if (state.courses.length === 0 || !state.hasResponse) return <p>No data...</p>
 
    return (
-      <section className={"margin-bottom"}>
+      <section className={clsx([styles["duolingo-widget"], "margin-bottom"])}>
          <div className={clsx([styles.section, "margin-bottom"])}>
             <div className={styles["profile-picture"]}>
                <img src={`${state.userData.picture}/xlarge`} />

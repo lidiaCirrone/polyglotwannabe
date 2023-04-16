@@ -5,6 +5,11 @@
    align-items: center
 }
 
+.duolingo-widget p {
+   margin: .2rem 0;
+   display: flex;
+}
+
 .duoBox {
    flex: 1;
 }
@@ -56,8 +61,11 @@
 
 .flex-item p.date {
    font-size: 11px;
-   text-align: right;
    margin-bottom: 0;
+}
+
+.flex-item p.date.right-text {
+   text-align: right;
 }
 
 @media (min-width: 481px) {
