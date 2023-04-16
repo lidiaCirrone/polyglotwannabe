@@ -26,7 +26,7 @@ export default function Hello() {
             <DuolingoWidget />
             {/* <Button label={"next"} href={"/hello"} /> */}
             <h2>News</h2>
-            <NewsWidget language={code} />
+            <NewsWidget languageCode={code} />
          </div>
       </Layout>
    )
