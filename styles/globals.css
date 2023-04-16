@@ -100,8 +100,9 @@ ul {
 
 .button {
    cursor: pointer;
-   width: 20vw;
-   padding: 2vw;
+   width: 100px;
+   height: 40px;
+   line-height: 40px;
    margin: 0 auto;
    color: #b1b1b1;
    font-weight: bold;

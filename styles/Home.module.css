@@ -6,3 +6,12 @@
    margin: .2rem 0;
    display: flex;
 }
+
+@media (min-width: 577px) {
+   .main {
+      margin: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+}

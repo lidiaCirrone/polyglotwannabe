@@ -7,7 +7,6 @@
 
 .duoBox {
    flex: 1;
-   margin-left: 1rem
 }
 
 .duoBox a {
@@ -15,7 +14,11 @@
 }
 
 .profile-picture {
-   width: 20vw;
+   display: none;
+}
+
+.profile-picture img {
+   width: 15vw;
    border-radius: 50%
 }
 
@@ -57,7 +60,17 @@
    margin-bottom: 0;
 }
 
-@media (min-width: 577px) {
+@media (min-width: 481px) {
+   .duoBox {
+      margin-left: 1rem
+   }
+
+   .profile-picture {
+      display: inline;
+   }
+}
+
+@media (min-width: 576px) {
    .flex-item {
       width: 32%;
       margin-bottom: 0;

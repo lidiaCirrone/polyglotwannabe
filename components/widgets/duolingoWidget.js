@@ -57,8 +57,8 @@ export default function DuolingoWidget() {
    return (
       <section className={"margin-bottom"}>
          <div className={clsx([styles.section, "margin-bottom"])}>
-            <div>
-               <img src={`${state.userData.picture}/xlarge`} className={styles["profile-picture"]} />
+            <div className={styles["profile-picture"]}>
+               <img src={`${state.userData.picture}/xlarge`} />
             </div>
             <div className={styles.duoBox}>
                <p><Link href={"https://www.duolingo.com/profile/lidiaCirrone"} target={"_blank"}>{state.userData.username}</Link> </p>
