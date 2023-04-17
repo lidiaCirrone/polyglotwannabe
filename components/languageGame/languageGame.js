@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+// components
+import Button from '../ui/button';
 
 // modules
 import clsx from 'clsx';
@@ -12,35 +15,86 @@ import { shuffle } from '@/utils/playing';
 
 function LanguageGame({ language }) {
 
-   console.log("\n\nlanguageGame");
-   console.log("language: ", language);
    const gameItem = languageGames[language];
-   console.log("gameItem: ", gameItem);
-   const words = gameItem.data.options;
-   shuffle(words);
 
-   const [chosenWords, setChosenWords] = useState([]);
+   const [state, setState] = useState({
+      words: [],
+      chosenWords: []
+   })
 
    // if gameItem.type === "wordOrder"
 
+   const toggleWord = (word, originalArray) => () => {
+      let updatedWords = state.words;
+      let updatedChosenWords = state.chosenWords;
+      console.log("\n\nupdatedWords: ", updatedWords);
+      console.log("updatedChosenWords: ", updatedChosenWords);
+      console.log("updatedWords.indexOf(word): ", updatedWords.indexOf(word));
+      if (updatedWords.includes(word)) {
+         console.log("tapped on default word");
+         updatedWords.splice(updatedWords.indexOf(word), 1);
+         console.log("updatedWords on default tap: ", updatedWords);
+         updatedChosenWords.push(word);
+         console.log("updatedChosenWords on default tap: ", updatedChosenWords);
+      } else {
+         console.log("tapped on chosen word");
+         updatedChosenWords.splice(updatedChosenWords.indexOf(word), 1);
+         console.log("updatedChosenWords on chosen tap: ", updatedChosenWords);
+         updatedWords.push(word);
+         console.log("updatedWords on chosen tap: ", updatedWords);
+      }
+      setState({
+         words: updatedWords,
+         chosenWords: updatedChosenWords,
+      })
+      setTimeout(() => {
+         if (updatedWords.length === 0) {
+            if (updatedChosenWords.join(" ") === gameItem.data.solution) {
+               alert("CORRECT!")
+            } else {
+               alert("try again :(")
+               resetState();
+            }
+         }
+      }, 500)
+   }
+
    const renderWords = (item, key) => (
-      <div className={styles["word-box"]} key={`word-order-${key}`}>{item}</div>
+      <div className={styles["word-box"]} key={`word-order-${key}`} onClick={toggleWord(item, "words")}>{item}</div>
    )
 
    const renderChosenWords = (item, key) => (
-      <div className={styles["word-box"]} key={`chosen-word-${key}`}>{item}</div>
+      <div className={styles["chosen-word-box"]} key={`chosen-word-${key}`} onClick={toggleWord(item, "chosenWords")}>{item}</div>
    )
 
+   const resetState = () => {
+      const gameWords = structuredClone(gameItem.data.options);
+      console.log("gameWords on reset: ", gameWords);
+      shuffle(gameWords);
+      setState({
+         words: gameWords,
+         chosenWords: []
+      })
+   }
+
+   useEffect(() => {
+      const gameWords = structuredClone(gameItem.data.options);
+      shuffle(gameWords);
+      setState({
+         ...state,
+         words: gameWords
+      })
+   }, [])
+
    return (
-      <>
-         <div>
-            <h2>Let's play!</h2>
-            <p className={"margin-bottom"}>{gameItem.data.instructions}</p>
-            <p className={clsx(["bold", "margin-bottom"])}>{gameItem.data.source}</p>
-            <div className={styles["chosen-words-container"]}>{chosenWords.map(renderChosenWords)}</div>
-            <div className={styles["words-container"]}>{words.map(renderWords)}</div>
-         </div>
-      </>
+      <div>
+         <h2>Let's play!</h2>
+         <p className={"margin-bottom"}>{gameItem.data.instructions}</p>
+         <p className={clsx(["bold", "margin-bottom"])}>{gameItem.data.source}</p>
+         <div className={styles["words-container"]}>{state.words.map(renderWords)}</div>
+         <div className={styles["chosen-words-container"]}>{state.chosenWords.map(renderChosenWords)}</div>
+         <Button label={"Reset"} onClick={resetState} />
+      </div>
    )
 }
 
