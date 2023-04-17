@@ -86,7 +86,7 @@ export const languageGames = {
       data: {
          instructions: "Translate the following sentence placing the words in the right order:",
          source: "My name is Lidia, I'm 28 years old and I live in Turin.",
-         solution: "Меня зовут Лидия, мне 28 лет, и я живу в Турине.",
+         solution: "Меня зовут Лидия, и мне 28 лет.",
          options: ["Меня", "зовут", "Лидия,", "и", "мне", "28", "лет."]
       }
    },
