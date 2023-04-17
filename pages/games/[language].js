@@ -7,17 +7,22 @@ import { useSelector } from 'react-redux'
 
 // styles
 import styles from './language.module.css'
+import LanguageGame from '@/components/languageGame/languageGame'
+import { useRouter } from 'next/router'
 
 const Language = () => {
 
+   const router = useRouter();
    const language = useSelector((state) => state.user.language);
    // TO-DO: now that it's taken from redux, `router.query` may not correspond to language.slug!
+   console.log("redux language item: ", JSON.stringify(language, null, 2));
+   console.log("router?.query?.language: ", router?.query?.language);
 
    return (
       <Layout pageName={language.name} pageDescription={language.name}>
          <section className={styles.container}>
             <NavigationBar />
-            <p>language item from redux: {JSON.stringify(language)}</p>
+            <LanguageGame language={router?.query?.language} />
          </section>
       </Layout>
    )

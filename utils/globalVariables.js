@@ -55,3 +55,51 @@ export const languages = [
       slug: "swedish",
    },
 ]
+
+export const languageGames = {
+   "italian": {
+      type: "aaa",
+      data: {
+         key: "value"
+      }
+   },
+   "english": {
+      type: "aaa",
+      data: {
+         key: "value"
+      }
+   },
+   "french": {
+      type: "aaa",
+      data: {
+         key: "value"
+      }
+   },
+   "spanish": {
+      type: "aaa",
+      data: {
+         key: "value"
+      }
+   },
+   "russian": {
+      type: "wordOrder",
+      data: {
+         instructions: "Translate the following sentence placing the words in the right order:",
+         source: "My name is Lidia, I'm 28 years old and I live in Turin.",
+         solution: "Меня зовут Лидия, мне 28 лет, и я живу в Турине.",
+         options: ["Меня", "зовут", "Лидия,", "и", "мне", "28", "лет."]
+      }
+   },
+   "portuguese": {
+      type: "aaa",
+      data: {
+         key: "value"
+      }
+   },
+   "swedish": {
+      type: "aaa",
+      data: {
+         key: "value"
+      }
+   },
+}
