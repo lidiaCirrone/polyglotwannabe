@@ -85,14 +85,12 @@ function WordOrder({ language }) {
    }, [])
 
    return (
-      <div>
-         <h2>Let's play!</h2>
-         <p className={"margin-bottom"}>{gameItem.data.instructions}</p>
+      <>
          <p className={clsx(["bold", "margin-bottom"])}>{gameItem.data.source}</p>
          <div className={styles["words-container"]}>{state.words.map(renderWords)}</div>
          <div className={styles["chosen-words-container"]}>{state.chosenWords.map(renderChosenWords)}</div>
          <Button label={"Reset"} onClick={resetState} />
-      </div>
+      </>
    )
 }
 

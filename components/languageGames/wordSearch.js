@@ -17,11 +17,10 @@ function WordSearch({ language }) {
    const gameItem = languageGames[language];
 
    return (
-      <div>
-         <h2>Let's play!</h2>
-         <p className={"margin-bottom"}>{gameItem.data.instructions}</p>
+      <>
+         <p>Portuguese game HERE</p>
          {/* <Button label={"Reset"} onClick={resetState} /> */}
-      </div>
+      </>
    )
 }
 
