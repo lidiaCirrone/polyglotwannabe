@@ -1,3 +1,6 @@
+import WordOrder from "@/components/languageGames/wordOrder"
+import WordSearch from "@/components/languageGames/wordSearch"
+
 /**
  * `code` the 2-letter ISO-639-1 code for that language
  * `label` the name in the language
@@ -59,30 +62,35 @@ export const languages = [
 export const languageGames = {
    "italian": {
       type: "aaa",
+      component: <p>Italian component here</p>,
       data: {
          key: "value"
       }
    },
    "english": {
       type: "aaa",
+      component: <p>English component here</p>,
       data: {
          key: "value"
       }
    },
    "french": {
       type: "aaa",
+      component: <p>French component here</p>,
       data: {
          key: "value"
       }
    },
    "spanish": {
       type: "aaa",
+      component: <p>Spanish component here</p>,
       data: {
          key: "value"
       }
    },
    "russian": {
       type: "wordOrder",
+      component: <WordOrder language={"russian"} />,
       data: {
          instructions: "Translate the following sentence placing the words in the right order:",
          source: "My name is Lidia, I'm 28 years old and I live in Turin.",
@@ -92,6 +100,7 @@ export const languageGames = {
    },
    "portuguese": {
       type: "wordSearch",
+      component: <WordSearch language={"portuguese"} />,
       data: {
          instructions: "Find the names of the days of the week:",
          matrix: [
@@ -111,6 +120,7 @@ export const languageGames = {
    },
    "swedish": {
       type: "aaa",
+      component: <p>Swedish component here</p>,
       data: {
          key: "value"
       }
