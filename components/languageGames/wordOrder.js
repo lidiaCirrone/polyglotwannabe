@@ -7,13 +7,13 @@ import Button from '../ui/button';
 import clsx from 'clsx';
 
 // styles
-import styles from './languageGame.module.css'
+import styles from './languageGames.module.css'
 
 // utils
 import { languageGames } from '@/utils/globalVariables';
 import { shuffle } from '@/utils/playing';
 
-function LanguageGame({ language }) {
+function WordOrder({ language }) {
 
    const gameItem = languageGames[language];
 
@@ -22,9 +22,7 @@ function LanguageGame({ language }) {
       chosenWords: []
    })
 
-   // if gameItem.type === "wordOrder"
-
-   const toggleWord = (word, originalArray) => () => {
+   const toggleWord = (word) => () => {
       let updatedWords = state.words;
       let updatedChosenWords = state.chosenWords;
       console.log("\n\nupdatedWords: ", updatedWords);
@@ -60,11 +58,11 @@ function LanguageGame({ language }) {
    }
 
    const renderWords = (item, key) => (
-      <div className={styles["word-box"]} key={`word-order-${key}`} onClick={toggleWord(item, "words")}>{item}</div>
+      <div className={styles["word-box"]} key={`word-order-${key}`} onClick={toggleWord(item)}>{item}</div>
    )
 
    const renderChosenWords = (item, key) => (
-      <div className={styles["chosen-word-box"]} key={`chosen-word-${key}`} onClick={toggleWord(item, "chosenWords")}>{item}</div>
+      <div className={styles["chosen-word-box"]} key={`chosen-word-${key}`} onClick={toggleWord(DataTransferItem)}>{item}</div>
    )
 
    const resetState = () => {
@@ -98,4 +96,4 @@ function LanguageGame({ language }) {
    )
 }
 
-export default LanguageGame;
+export default WordOrder;

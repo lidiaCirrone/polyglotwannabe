@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 
 // styles
 import styles from './language.module.css'
-import LanguageGame from '@/components/languageGame/languageGame'
+import LanguageGame from '@/components/languageGames/wordOrder'
 import { useRouter } from 'next/router'
 
 const Language = () => {

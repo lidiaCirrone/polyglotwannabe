@@ -1,7 +1,7 @@
 //components
 import Layout from '@/components/layout'
 import NavigationBar from '@/components/ui/navigationBar'
-import LanguageGame from '@/components/languageGame/languageGame'
+import WordOrder from '@/components/languageGames/wordOrder'
 
 // redux
 import { useSelector } from 'react-redux'
@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 // styles
 import styles from './language.module.css'
 
-const Language = () => {
+const Russian = () => {
 
    const language = useSelector((state) => state.user.language);
 
@@ -17,10 +17,10 @@ const Language = () => {
       <Layout pageName={language.name} pageDescription={language.name}>
          <section className={styles.container}>
             <NavigationBar />
-            <LanguageGame language={"russian"} />
+            <WordOrder language={"russian"} />
          </section>
       </Layout>
    )
 }
 
-export default Language
+export default Russian
