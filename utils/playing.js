@@ -14,5 +14,16 @@ export function shuffle(array) {
  * @returns {[[]]}
  */
 export function generateWordsGrid(rows, columns) {
-   return Array(rows).fill(Array(columns).fill(0));
+   // return Array(rows).fill(Array(columns).fill(0));
+   return Array(rows).fill().map(_ => Array(columns).fill(0))
+}
+
+/**
+ * generates a matrix of the same length of the given one, populating it with 1s where cells contain the solution `indicator` and 0s where they don't
+ * @param {number} matrix the source matrix to calculate the 0/1 pairs from
+ * @param {string} indicator the character used to indicate if the given cell is part of the solution
+ * @returns {[[]]}
+ */
+export function generateSolutionFromMatrix(matrix, indicator) {
+   return matrix.map((row, r) => row.map((col, c) => matrix[r][c].includes(indicator) ? 1 : 0));
 }
