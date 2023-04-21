@@ -58,6 +58,7 @@
    width: 50px;
    aspect-ratio: 1;
    border: 1px solid #f3f3f3;
+   cursor: pointer;
 }
 
 .selected {
