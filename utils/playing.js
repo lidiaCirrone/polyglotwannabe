@@ -6,3 +6,13 @@ export function shuffle(array) {
       array[j] = temp;
    }
 }
+
+/**
+ * generates a matrix of the given number of rows and columns populated with 0s
+ * @param {number} rows
+ * @param {number} columns 
+ * @returns {[[]]}
+ */
+export function generateWordsGrid(rows, columns) {
+   return Array(rows).fill(Array(columns).fill(0));
+}
