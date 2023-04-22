@@ -2,6 +2,8 @@
  * 
  * @param {[]} courses an array of objects representing the languages that a Duolingo user has ever studied
  * @returns an array of languages grouped by `fromLanguage` (descending order) and then by `xp` (descending order)
+ * 
+ * algorithm taken from https://stackoverflow.com/a/47520361
  */
 export function sortCourses(courses) {
    let count = courses.reduce((acc, item) => {
