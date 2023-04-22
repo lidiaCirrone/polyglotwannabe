@@ -1,4 +1,6 @@
 //components
+import Container from '@/components/ui/container'
+import Credits from '@/components/ui/credits';
 import Layout from '@/components/layout'
 import NavigationBar from '@/components/ui/navigationBar'
 
@@ -10,7 +12,6 @@ import { useSelector } from 'react-redux'
 
 // utils
 import { languageGames } from '@/utils/globalVariables';
-import Container from '@/components/ui/container'
 
 const Language = () => {
 
@@ -30,6 +31,7 @@ const Language = () => {
                      <p className={"margin-bottom"}>{gameItem.data.instructions}</p>
 
                      {gameItem.component}
+                     {gameItem.data.credits && <Credits>{gameItem.data.credits}</Credits>}
                   </>
                ) : <>
                   <h2>{":("}</h2>

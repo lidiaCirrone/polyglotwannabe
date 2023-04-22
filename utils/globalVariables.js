@@ -117,7 +117,8 @@ export const languageGames = {
             ["D", "M", "Ç", "A", "G", "O-", "R", "N", "T-", "O", "A", "R", "O"],
             ["A", "N", "A", "Q", "N", "D", "F", "T", "A-", "E", "B", "T", "A"]
          ],
-         indicator: "-"
+         indicator: "-",
+         credits: `Taken from "Ana Tavares , Português XXI 1 - Caderno de Exercícios (Grupo LIDEL)"`
       }
    },
    "swedish": {
