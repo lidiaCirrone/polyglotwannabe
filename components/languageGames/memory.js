@@ -1,16 +1,23 @@
+import { useEffect, useState } from 'react';
+
 // styles
 import styles from './languageGames.module.css'
 
 // utils
 import { languageGames } from '@/utils/globalVariables';
+import { shuffle } from '@/utils/playing';
 
 function Memory({ language }) {
+
    const gameItem = languageGames[language];
-   const { cards } = gameItem.data;
+   const [state, setState] = useState({
+      cards: [],
+      flippedCards: []
+   })
 
    function renderCards() {
       return (
-         cards.map((card, i) => {
+         state.cards.map((card, i) => {
             console.log("card: ", card);
             let isImage = card.content.includes(".png");
             return (
@@ -21,6 +28,15 @@ function Memory({ language }) {
          })
       )
    }
+
+   useEffect(() => {
+      const cards = structuredClone(gameItem.data.cards);
+      shuffle(cards);
+      setState({
+         ...state,
+         cards
+      })
+   }, [])
 
    return (
       <div className={styles["memory-container"]}>
