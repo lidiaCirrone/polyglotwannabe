@@ -18,10 +18,11 @@ const Language = () => {
    const router = useRouter();
    const language = useSelector((state) => state.user.language);
    const gameLanguage = router.query.language
+   const capitalizedLanguageName = gameLanguage.charAt(0).toUpperCase() + gameLanguage.slice(1)
    const gameItem = languageGames[gameLanguage];
 
    return (
-      <Layout pageName={language.name} pageDescription={language.name}>
+      <Layout pageName={capitalizedLanguageName} pageDescription={capitalizedLanguageName}>
          <Container>
             <NavigationBar />
             <div>
