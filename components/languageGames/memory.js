@@ -29,6 +29,10 @@ function Memory({ language }) {
       )
    }
 
+   // better to remove this use effect and just do 
+   // `cards: gameItem.data.cards.sort(() => Math.random() - 0.5)`
+   // on state initialization?
+   
    useEffect(() => {
       const cards = structuredClone(gameItem.data.cards);
       shuffle(cards);
