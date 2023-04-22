@@ -1,3 +1,30 @@
+/* memory */
+
+.memory-container {
+   display: grid;
+   grid-template-rows: repeat(5, 1fr);
+   grid-template-columns: repeat(5, 1fr);
+   gap: 1%;
+}
+
+.memory-card {
+   aspect-ratio: 1;
+   border-radius: 6px;
+   background-color: var(--rainbow-four);
+   padding: .5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.memory-card p {
+   text-align: center;
+}
+
+.memory-card img {
+   max-width: 70%;
+}
+
 /* word order */
 
 .words-container {
