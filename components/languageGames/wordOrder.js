@@ -86,7 +86,7 @@ function WordOrder({ language }) {
 
    return (
       <>
-         <p className={clsx(["bold", "margin-bottom"])}>{gameItem.data.source}</p>
+         <p className={"bold margin-bottom"}>{gameItem.data.source}</p>
          <div className={styles["words-container"]}>{state.words.map(renderWords)}</div>
          <div className={styles["chosen-words-container"]}>{state.chosenWords.map(renderChosenWords)}</div>
          <Button label={"Reset"} onClick={resetState} />
