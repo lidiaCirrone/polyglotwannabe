@@ -18,6 +18,9 @@ const Language = () => {
    const router = useRouter();
    const language = useSelector((state) => state.user.language);
    const gameLanguage = router.query.language
+
+   if (!gameLanguage) return <p>No data...</p>
+
    const capitalizedLanguageName = gameLanguage.charAt(0).toUpperCase() + gameLanguage.slice(1)
    const gameItem = languageGames[gameLanguage];
 
