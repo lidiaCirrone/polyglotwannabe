@@ -16,9 +16,9 @@ import { generateSolutionFromMatrix, generateWordsGrid } from '@/utils/playing';
 function WordSearch({ language }) {
 
    const gameItem = languageGames[language];
-   const { matrix } = gameItem.data;
+   const { matrix, indicator } = gameItem.data;
    const emptyGrid = useMemo(() => generateWordsGrid(12, 13), [])
-   const solution = useMemo(() => generateSolutionFromMatrix(matrix, "-"), [matrix])
+   const solution = useMemo(() => generateSolutionFromMatrix(matrix, indicator), [matrix])
 
    const [grid, setGrid] = useState(emptyGrid);
    const numbersOfTaps = useRef(0);
