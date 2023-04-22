@@ -109,7 +109,7 @@ export const languageGames = {
             { id: 10, label: "orange juice", content: "/games/memory/orange_juice.png" },
             { id: 10, label: "orange juice", content: "el zumo de naranja" },
          ],
-         // credits: "<a target="_blank" href="https://icons8.com/icon/81387/cereza">Cereza</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>"
+         credits: <><a target="_blank" href="https://iconos8.es/icon/set/comida/doodle">Iconos de comida</a> by <a target="_blank" href="https://icons8.com">Icons8</a></>
       }
    },
    "russian": {
