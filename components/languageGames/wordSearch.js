@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 // components
 import Button from '../ui/button';
@@ -21,7 +21,6 @@ function WordSearch({ language }) {
    const solution = useMemo(() => generateSolutionFromMatrix(matrix, indicator), [matrix])
 
    const [grid, setGrid] = useState(emptyGrid);
-   const numbersOfTaps = useRef(0);
 
    const toggleLetter = (r, c) => () => {
       const updatedGrid = structuredClone(grid);
@@ -32,19 +31,11 @@ function WordSearch({ language }) {
             alert("CORRECT!")
          }, 250);
       }
-      numbersOfTaps.current++;
-      console.log("numbersOfTaps.current: ", numbersOfTaps.current)
    }
 
    const resetGrid = () => {
       setGrid(emptyGrid)
    }
-
-   useEffect(() => {
-      if (numbersOfTaps.current !== 0 && numbersOfTaps.current % 20 === 0) {
-         console.log("need a hint?")
-      }
-   }, [numbersOfTaps.current])
 
    function renderGrid() {
       return (
