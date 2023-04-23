@@ -1,0 +1,29 @@
+/* 
+
+Card Flip Transitions (Olli React Flip Card tutorial: https://www.youtube.com/watch?v=9uwZkqoFAfg)
+
+Exit Transition 
+isFlipped = false -> true 
+front -> back 
+
+Enter Transition 
+isFlipped = true -> false 
+back -> front 
+
+*/
+
+/* class that becomes active right before the start of the transition, all the styles to initialise our transition */
+.flipped-enter {
+   transform: rotateY(0deg);
+}
+
+/* active during the transition, all the styles our card should animate to */
+.flipped-enter-active {
+   transform: rotateY(180deg);
+   transition: transform 300ms;
+}
+
+/* when the transition is over, a class to persist the styles we have transitioned to */
+.flipped-enter-done {
+   transform: rotateY(180deg);
+}

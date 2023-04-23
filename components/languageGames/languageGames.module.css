@@ -1,32 +1,3 @@
-/* memory */
-
-.memory-container {
-   grid-template-columns: 25% 25% 25% 25%;
-   display: grid;
-   max-width: 440px;
-}
-
-.memory-card {
-   aspect-ratio: 1;
-   border-radius: 6px;
-   background-color: var(--rainbow-four);
-   padding: .5rem;
-   margin: 0.2rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.memory-card p {
-   text-align: center;
-   /* font-size: .8rem; */
-}
-
-.memory-card img {
-   max-width: 50%;
-   height: auto;
-}
-
 /* word order */
 
 .words-container {
