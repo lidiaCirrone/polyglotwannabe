@@ -1,6 +1,8 @@
+// modules
+import clsx from "clsx";
+
 // styles
 import styles from "./memory.module.css"
-import clsx from "clsx";
 
 function FlippableCard({ card, onClick, flipped, disabled, isWrong }) {
 

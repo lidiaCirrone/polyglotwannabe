@@ -20,20 +20,31 @@ function Memory({ language }) {
    const [isWrong, setIsWrong] = useState(false);
 
    const handleChoice = (card) => {
-      console.log("handle choice card: ", card)
       cardOne ? setCardTwo(card) : setCardOne(card);
    }
 
+   function resetTurn() {
+      setCardOne(null);
+      setCardTwo(null);
+      setDisabled(false)
+   }
+
    useEffect(() => {
-      console.log("\n\ncardOne: ", cardOne);
-      console.log("cardTwo: ", cardTwo);
+      let matchedCards = cards.filter(card => card.matched);
+      if (cards.length !== 0 && matchedCards.length === cards.length) {
+         setTimeout(() => {
+            alert("CORRECT!")
+         }, 1000);
+      }
+   }, [cards])
+
+   useEffect(() => {
       if (cardOne && cardTwo) {
          setDisabled(true);
          if (cardOne.label === cardTwo.label) {
             // cards match
             setCards(prevCards => {
                return prevCards.map(card => {
-                  console.log("\n\ncard.label === cardOne.label: ", card.label === cardOne.label)
                   if (card.label === cardOne.label) {
                      return { ...card, matched: true }
                   } else {
@@ -50,21 +61,11 @@ function Memory({ language }) {
             setTimeout(() => {
                setIsWrong(false);
                resetTurn();
-            }, 1100);
+            }, 1000);
          }
       }
 
    }, [cardOne, cardTwo])
-
-   function resetTurn() {
-      setCardOne(null);
-      setCardTwo(null);
-      setDisabled(false)
-   }
-
-   // better to remove this use effect and just do 
-   // `cards: gameItem.data.cards.sort(() => Math.random() - 0.5)`
-   // on state initialization?
 
    useEffect(() => {
       const cards = structuredClone(gameItem.data.cards);
