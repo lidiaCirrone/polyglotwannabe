@@ -17,6 +17,7 @@ function Memory({ language }) {
    const [cardOne, setCardOne] = useState(null);
    const [cardTwo, setCardTwo] = useState(null);
    const [disabled, setDisabled] = useState(false);
+   const [isWrong, setIsWrong] = useState(false);
 
    const handleChoice = (card) => {
       console.log("handle choice card: ", card)
@@ -44,8 +45,12 @@ function Memory({ language }) {
          } else {
             // cards don't match
             setTimeout(() => {
+               setIsWrong(true);
+            }, 200);
+            setTimeout(() => {
+               setIsWrong(false);
                resetTurn();
-            }, 700);
+            }, 1100);
          }
       }
 
@@ -67,13 +72,16 @@ function Memory({ language }) {
       setCards(cards);
    }, [])
 
-   const renderCards = (card, i) => <FlippableCard
-      key={`card-${i}`}
-      card={card}
-      onClick={handleChoice}
-      flipped={card === cardOne || card === cardTwo || card.matched}
-      disabled={disabled || card === cardOne || card === cardTwo || card.matched}
-   />
+   const renderCards = (card, i) => (
+      <FlippableCard
+         key={`card-${i}`}
+         card={card}
+         onClick={handleChoice}
+         flipped={card === cardOne || card === cardTwo || card.matched}
+         disabled={disabled || card === cardOne || card === cardTwo || card.matched}
+         isWrong={isWrong}
+      />
+   )
 
    return (
       <div className={styles["container"]}>

@@ -2,7 +2,7 @@
 import styles from "./memory.module.css"
 import clsx from "clsx";
 
-function FlippableCard({ card, onClick, flipped, disabled }) {
+function FlippableCard({ card, onClick, flipped, disabled, isWrong }) {
 
    const { label, content, matched } = card;
 
@@ -16,7 +16,7 @@ function FlippableCard({ card, onClick, flipped, disabled }) {
 
    return (
       <div className={styles["card-container"]}>
-         <div className={clsx(styles["card"], flipped && styles["flipped"], matched && styles["correct"])} onClick={handleCardFlip}>
+         <div className={clsx(styles.card, flipped && styles.flipped, matched && styles.correct, flipped && isWrong && styles.wrong, disabled && styles.disabled)} onClick={handleCardFlip}>
             <div className={clsx(styles["card-back"])}>{wrappedContent}</div>
             <div className={styles["card-front"]} />
          </div>
