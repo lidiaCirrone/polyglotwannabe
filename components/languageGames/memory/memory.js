@@ -10,6 +10,8 @@ import styles from './memory.module.css'
 import { languageGames } from '@/utils/globalVariables';
 import { shuffle } from '@/utils/playing';
 
+// Thanks to The Net Ninja tutorial: https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm
+
 function Memory({ language }) {
 
    const gameItem = languageGames[language];
