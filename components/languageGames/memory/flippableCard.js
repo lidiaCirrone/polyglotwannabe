@@ -1,43 +1,25 @@
-import { useState } from "react"
-
-// modules
-import { CSSTransition } from "react-transition-group"
-
 // styles
 import styles from "./memory.module.css"
+import clsx from "clsx";
 
-function FlippableCard({ card, onClick }) {
+function FlippableCard({ card, onClick, flipped, disabled }) {
 
-   const content = card.content.includes(".png") ? <img src={card.content} alt={card.label} /> : <p>{card.content}</p>;
-   const transitionClassNames = {
-      enter: styles["flipped-enter"],
-      enterActive: styles["flipped-enter-active"],
-      enterDone: styles["flipped-enter-done"],
-      exit: styles["flipped-exit"],
-      exitActive: styles["flipped-exit-active"],
-      exitDone: styles["flipped-exit-done"]
-   }
+   const { label, content, matched } = card;
 
-   const [isFlipped, setIsFlipped] = useState(false)
+   const wrappedContent = content.includes(".png") ? <img src={content} alt={label} /> : <p>{content}</p>;
 
-   function handleCardFlip() {
-      console.log("card flip id: ", card.id)
-      setIsFlipped((current) => !current);
-      onClick(card.id)
+   const handleCardFlip = () => {
+      if (!disabled) {
+         onClick(card)
+      }
    }
 
    return (
       <div className={styles["card-container"]}>
-         <CSSTransition
-            in={isFlipped}
-            timeout={300}
-            classNames={transitionClassNames}
-         >
-            <div className={styles["card"]} onClick={handleCardFlip}>
-               <div className={styles["card-back"]}>{content}</div>
-               <div className={styles["card-front"]}>?</div>
-            </div>
-         </CSSTransition>
+         <div className={clsx(styles["card"], flipped && styles["flipped"], matched && styles["correct"])} onClick={handleCardFlip}>
+            <div className={clsx(styles["card-back"])}>{wrappedContent}</div>
+            <div className={styles["card-front"]} />
+         </div>
       </div>
    )
 }

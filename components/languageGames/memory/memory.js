@@ -13,34 +13,48 @@ import { shuffle } from '@/utils/playing';
 function Memory({ language }) {
 
    const gameItem = languageGames[language];
-   const [state, setState] = useState({
-      cards: [],
-      flippedCards: []
-   })
+   const [cards, setCards] = useState([]);
+   const [cardOne, setCardOne] = useState(null);
+   const [cardTwo, setCardTwo] = useState(null);
+   const [disabled, setDisabled] = useState(false);
 
-   const toggleCard = (toggledId) => {
-      console.log("flipped card toggledId: ", toggledId);
-      console.log("flipped card : ", state.cards[toggledId]);
+   const handleChoice = (card) => {
+      console.log("handle choice card: ", card)
+      cardOne ? setCardTwo(card) : setCardOne(card);
+   }
 
-      // let flippedCards = structuredClone(state.flippedCards);
-      // let flippedCards = [...state.flippedCards];
+   useEffect(() => {
+      console.log("\n\ncardOne: ", cardOne);
+      console.log("cardTwo: ", cardTwo);
+      if (cardOne && cardTwo) {
+         setDisabled(true);
+         if (cardOne.label === cardTwo.label) {
+            // cards match
+            setCards(prevCards => {
+               return prevCards.map(card => {
+                  console.log("\n\ncard.label === cardOne.label: ", card.label === cardOne.label)
+                  if (card.label === cardOne.label) {
+                     return { ...card, matched: true }
+                  } else {
+                     return card
+                  }
+               })
+            })
+            resetTurn();
+         } else {
+            // cards don't match
+            setTimeout(() => {
+               resetTurn();
+            }, 700);
+         }
+      }
 
-      // if (flippedCards.length === 2)
-      // check()
-      // reset()
-      // return so it exits?
+   }, [cardOne, cardTwo])
 
-      // let idIndex = flippedCards.indexOf(toggledId);
-      // console.log("idIndex: ", idIndex);
-      // if (idIndex !== -1) {
-      //    flippedCards = flippedCards.filter(id => id !== toggledId)
-      // } else {
-      //    flippedCards.push(toggledId)
-      // }
-      // setState({
-      //    ...state,
-      //    flippedCards
-      // })
+   function resetTurn() {
+      setCardOne(null);
+      setCardTwo(null);
+      setDisabled(false)
    }
 
    // better to remove this use effect and just do 
@@ -50,17 +64,20 @@ function Memory({ language }) {
    useEffect(() => {
       const cards = structuredClone(gameItem.data.cards);
       shuffle(cards);
-      setState({
-         ...state,
-         cards
-      })
+      setCards(cards);
    }, [])
 
-   const renderCards = (card, i) => <FlippableCard key={`card-${i}`} card={card} onClick={toggleCard} />
+   const renderCards = (card, i) => <FlippableCard
+      key={`card-${i}`}
+      card={card}
+      onClick={handleChoice}
+      flipped={card === cardOne || card === cardTwo || card.matched}
+      disabled={disabled || card === cardOne || card === cardTwo || card.matched}
+   />
 
    return (
       <div className={styles["container"]}>
-         {state.cards.map(renderCards)}
+         {cards.map(renderCards)}
       </div>
    )
 }

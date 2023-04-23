@@ -16,11 +16,14 @@
 .card {
    width: 100%;
    height: 100%;
-   transform-style: preserve-3d;
+   /* transform-style: preserve-3d; */
    position: relative;
    user-select: none;
-   cursor: pointer;
    margin: 0.2rem;
+}
+
+.card:not(.flipped) {
+   cursor: pointer;
 }
 
 .card p {
@@ -40,65 +43,40 @@
    border-radius: 6px;
    -webkit-backface-visibility: hidden;
    backface-visibility: hidden;
-   position: absolute;
+   /* position: absolute; */
    display: flex;
    align-items: center;
    justify-content: center;
 }
 
-.card-front {
-   background-color: var(--disabled);
-}
-
-.card-back {
+.card .card-back {
    background-color: var(--rainbow-four);
-   transform: rotateY(180deg);
+   transform: rotateY(90deg);
+   transition: all ease-in 0.3s;
+   position: absolute;
 }
 
-
-
-/* 
-
-Card Flip Transitions (Olli React Flip Card tutorial: https://www.youtube.com/watch?v=9uwZkqoFAfg)
-
-Enter Transition 
-isFlipped = false -> true 
-front -> back 
-
-Exit Transition 
-isFlipped = true -> false 
-back -> front 
-
-*/
-
-/* class that becomes active right before the start of the transition, all the styles to initialise our transition */
-.flipped-enter {
+.flipped .card-back {
    transform: rotateY(0deg);
+   transition-delay: 0.3s;
 }
 
-/* active during the transition, all the styles our card should animate to */
-.flipped-enter-active {
-   transform: rotateY(180deg);
-   transition: transform 300ms;
+.card .card-front {
+   background-color: var(--disabled);
+   transition: all ease-in 0.3s;
+   transition-delay: 0.3s;
 }
 
-/* when the transition is over, a class to persist the styles we have transitioned to */
-.flipped-enter-done {
-   transform: rotateY(180deg);
+.flipped .card-front {
+   transform: rotateY(90deg);
+   transition-delay: 0s;
 }
 
-/* how our card should look like when we switch from back to front. At the beginning the back side of the card is visible and then, during the transition, it's rotated to the front again */
-.flipped-exit {
-   transform: rotateY(180deg);
+.wrong .card-back {
+   background-color: var(--rainbow-one);
+   color: white;
 }
 
-/* now we want to display the front again */
-.flipped-exit-active {
-   transform: rotateY(0deg);
-   transition: transform 300ms;
-}
-
-/* keeps the `exit-active` style after the transition is finished */
-.flipped-exit-done {
-   transform: rotateY(0deg);
+.correct .card-back {
+   background-color: var(--rainbow-five);
 }
