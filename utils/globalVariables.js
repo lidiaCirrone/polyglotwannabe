@@ -1,4 +1,4 @@
-import Memory from "@/components/languageGames/memory"
+import Memory from "@/components/languageGames/memory/memory"
 import WordOrder from "@/components/languageGames/wordOrder"
 import WordSearch from "@/components/languageGames/wordSearch"
 
@@ -86,24 +86,24 @@ export const languageGames = {
       type: "memory",
       component: <Memory language={"spanish"} />,
       data: {
-         instructions: "Flip the tiles and match them all!",
+         instructions: "Flip the tiles and match the pictures with the words they represent",
          cards: [
             { id: 1, label: "cherry", content: "/games/memory/cherry.png" },
-            { id: 1, label: "cherry", content: "la cereza" },
-            { id: 2, label: "croissant", content: "/games/memory/croissant.png" },
-            { id: 2, label: "croissant", content: "el cruasán" },
+            { id: 2, label: "cherry", content: "la cereza" },
+            { id: 3, label: "croissant", content: "/games/memory/croissant.png" },
+            { id: 4, label: "croissant", content: "el cruasán" },
             { id: 5, label: "apple", content: "/games/memory/apple.png" },
-            { id: 5, label: "apple", content: "la manzana" },
-            { id: 6, label: "pineapple", content: "/games/memory/pineapple.png" },
-            { id: 6, label: "pineapple", content: "la piña" },
-            { id: 7, label: "cheese", content: "/games/memory/cheese.png" },
-            { id: 7, label: "cheese", content: "el queso" },
-            { id: 8, label: "taco", content: "/games/memory/taco.png" },
-            { id: 8, label: "taco", content: "el taco" },
-            { id: 9, label: "carrot", content: "/games/memory/carrot.png" },
-            { id: 9, label: "carrot", content: "la zanahoria" },
-            { id: 10, label: "orange juice", content: "/games/memory/orange_juice.png" },
-            { id: 10, label: "orange juice", content: "el zumo de naranja" },
+            { id: 6, label: "apple", content: "la manzana" },
+            { id: 7, label: "pineapple", content: "/games/memory/pineapple.png" },
+            { id: 8, label: "pineapple", content: "la piña" },
+            { id: 9, label: "cheese", content: "/games/memory/cheese.png" },
+            { id: 10, label: "cheese", content: "el queso" },
+            { id: 11, label: "taco", content: "/games/memory/taco.png" },
+            { id: 12, label: "taco", content: "el taco" },
+            { id: 13, label: "carrot", content: "/games/memory/carrot.png" },
+            { id: 14, label: "carrot", content: "la zanahoria" },
+            { id: 15, label: "orange juice", content: "/games/memory/orange_juice.png" },
+            { id: 16, label: "orange juice", content: "el zumo de naranja" },
          ],
          credits: <><a target="_blank" href="https://iconos8.es/icon/set/comida/doodle">Iconos de comida</a> by <a target="_blank" href="https://icons8.com">Icons8</a></>
       }
