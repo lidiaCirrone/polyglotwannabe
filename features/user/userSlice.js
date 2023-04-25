@@ -1,13 +1,8 @@
+import { getLanguage } from '@/utils/globalVariables';
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-   language: {
-      code: "en",
-      name: "English",
-      label: "English",
-      locale: "en-GB",
-      slug: "english",
-   },
+   language: getLanguage("english"),
 }
 
 export const userSlice = createSlice({

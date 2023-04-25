@@ -60,7 +60,7 @@ export const languages = [
    },
 ]
 
-function getLanguage(slug) {
+export function getLanguage(slug) {
    return languages.find(item => item.slug === slug)
 }
 
