@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 
@@ -8,21 +8,42 @@ import styles from "./fillTheGaps.module.css"
 // utils
 import { createFillTheGapsGameSolution, languageGames } from "@/utils/globalVariables";
 
+function mapWords(array) {
+   return array.map(
+      (word, i) => [i, word]
+   )
+}
+
 function FillTheGaps({ language }) {
 
    const router = useRouter();
    const gameData = languageGames[language.slug].data;
    const { solution } = gameData;
+   const text = createFillTheGapsGameSolution(gameData);
 
-   const inputs = useRef([]);
+   // TO-DO: instad of mapping here, create text already mapped
+   const mappedInputs = Object.fromEntries(mapWords(text).filter(item => item[1] === "..."))
+   console.log("mappedInputs: ", mappedInputs)
+   const ids = Object.keys(mappedInputs);
+   console.log("ids: ", ids)
+   const mappedSolution = Object.fromEntries(mapWords(solution))
+   console.log("mappedSolution: ", mappedSolution)
 
    const [state, setState] = useState({
-      text: createFillTheGapsGameSolution(gameData),
-      answers: []
+      answers: mappedInputs,
+      solution: mappedSolution,
    })
 
-   const saveInputValue = () => {
-      console.log("saveInputValue")
+   const setInputValue = (i) => (event) => {
+      let value = event.target.value;
+      console.log("value: ", value)
+      console.log("i: ", i)
+      let updatedAnswers = structuredClone(state.answers);
+      updatedAnswers[i] = value;
+      setState({
+         ...state,
+         answers: updatedAnswers
+      })
    }
 
    const renderText = ((word, i) => {
@@ -34,19 +55,27 @@ function FillTheGaps({ language }) {
             {word === "..." ? <input
                type="text"
                className={styles.input}
-               ref={(ele) => { if (word === "...") inputs.current.push(ele) }}
-               onBlur={saveInputValue}
+               onChange={setInputValue(i)}
             /> : word}
          </div>)
    })
 
    useEffect(() => {
-      console.log("\n\ninputs: ", inputs.current);
-   }, [inputs.current])
+      console.log("\n\nstate.answers: ", state.answers);
+      console.log("state.solution: ", state.solution)
+      if (Object.keys(state.solution).length !== 0 && JSON.stringify(state.answers) === JSON.stringify(state.solution)) {
+         setTimeout(() => {
+            alert("CORRECT!")
+            router.push({
+               pathname: "/hello",
+            })
+         }, 250);
+      }
+   }, [state.answers])
 
    return (
       <div className={styles.container}>
-         {state.text.map(renderText)}
+         {text.map(renderText)}
       </div>
    )
 }
