@@ -26,21 +26,12 @@ function WordOrder({ language }) {
    const toggleWord = (word) => () => {
       let updatedWords = state.words;
       let updatedChosenWords = state.chosenWords;
-      console.log("\n\nupdatedWords: ", updatedWords);
-      console.log("updatedChosenWords: ", updatedChosenWords);
-      console.log("updatedWords.indexOf(word): ", updatedWords.indexOf(word));
       if (updatedWords.includes(word)) {
-         console.log("tapped on default word");
          updatedWords.splice(updatedWords.indexOf(word), 1);
-         console.log("updatedWords on default tap: ", updatedWords);
          updatedChosenWords.push(word);
-         console.log("updatedChosenWords on default tap: ", updatedChosenWords);
       } else {
-         console.log("tapped on chosen word");
          updatedChosenWords.splice(updatedChosenWords.indexOf(word), 1);
-         console.log("updatedChosenWords on chosen tap: ", updatedChosenWords);
          updatedWords.push(word);
-         console.log("updatedWords on chosen tap: ", updatedWords);
       }
       setState({
          words: updatedWords,
@@ -71,7 +62,6 @@ function WordOrder({ language }) {
 
    const resetState = () => {
       const gameWords = structuredClone(gameItem.data.options);
-      console.log("gameWords on reset: ", gameWords);
       shuffle(gameWords);
       setState({
          words: gameWords,

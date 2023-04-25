@@ -36,10 +36,7 @@ function Color({ language }) {
    const setWordColor = (id) => () => {
       const updatedWords = structuredClone(state.words);
       const currentWord = updatedWords.find(item => item.id === id);
-      console.log("\n\nid: ", id);
-      console.log("currentWord: ", currentWord);
       currentWord.selected = currentWord.selected === state.currentColor.type ? "" : state.currentColor.type;
-      console.log("currentWord after: ", currentWord);
       setState({
          ...state,
          words: updatedWords
@@ -54,9 +51,7 @@ function Color({ language }) {
    )
 
    useEffect(() => {
-      console.log("\n\nwords have changed");
       let missingWords = state.words.filter(item => item.type && item.type !== item.selected);
-      console.log("missingWords: ", missingWords);
       if (missingWords.length === 0) {
          setTimeout(() => {
             alert("CORRECT!")
