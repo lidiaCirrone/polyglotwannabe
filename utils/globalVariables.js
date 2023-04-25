@@ -1,4 +1,5 @@
 import Color from "@/components/languageGames/color"
+import FillTheGaps from "@/components/languageGames/fillTheGaps"
 import Memory from "@/components/languageGames/memory/memory"
 import WordOrder from "@/components/languageGames/wordOrder"
 import WordSearch from "@/components/languageGames/wordSearch"
@@ -78,12 +79,19 @@ export function createColorGameSolution({ text, solution }) {
    return solutionArray;
 }
 
+export function createFillTheGapsGameSolution({ text }) {
+   return text.split(" ");
+}
+
 export const languageGames = {
    "italian": {
-      type: "aaa",
-      component: <p>Italian component here</p>,
+      type: "fillTheGaps",
+      component: <FillTheGaps language={getLanguage("italian")} />,
       data: {
-         key: "value"
+         instructions: "Fill the gaps by conjugating the verbs inside parentheses in the present tense",
+         text: "La lingua ... (essere, 3a p.s.) il sistema o forma storicamente determinata attraverso il quale gli appartenenti a una comunità ... (esprimersi, 3a p.p.) e ... (comunicare, 3a p.p.) tra loro attraverso l'uso di un determinato linguaggio ovvero un insieme di segni scritti (simboli) e/o parlati (suoni).",
+         solution: ["è", "si esprimono", "comunicano"],
+         credits: <>Taken from <a target="_blank" href="https://it.wikipedia.org/wiki/Lingua_(linguistica)">Wikipedia</a></>
       }
    },
    "english": {

@@ -27,7 +27,18 @@
       --heading-hover: #c2c2c2;
       --primary: #a3a3a3;
    }
+
+   /* }
+
+@media (prefers-color-scheme: dark) { */
+   html {
+      color-scheme: dark;
+   }
 }
+
+
+
+/* general overrides */
 
 * {
    box-sizing: border-box;
@@ -62,6 +73,15 @@ ul {
    list-style-type: none;
 }
 
+button,
+input {
+   font-family: inherit;
+}
+
+
+
+/* utilities */
+
 .margin {
    margin: 1rem;
 }
@@ -93,10 +113,4 @@ ul {
 .small {
    font-size: .8rem;
    font-style: italic;
-}
-
-@media (prefers-color-scheme: dark) {
-   html {
-      color-scheme: dark;
-   }
 }
