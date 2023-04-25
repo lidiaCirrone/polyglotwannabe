@@ -16,18 +16,16 @@ export default function LanguageTiles() {
    const router = useRouter();
    const dispatch = useDispatch();
 
-   const goTo = (code) => () => {
-      let newLanguage = languages.find(item => item.code === code)
+   const goTo = (newLanguage) => () => {
       dispatch(setLanguage(newLanguage));
       router.push({
-         pathname: "/hello",
-         query: { language: code }
+         pathname: `/games/${newLanguage.slug}`,
       })
    }
 
    function renderLanguageTile(language, index) {
       return (
-         <div className={clsx([styles.tile, styles[`tile${index + 1}`]])} key={`language-${index}`} onClick={goTo(language.code)}>{language.name}</div>
+         <div className={clsx([styles.tile, styles[`tile${index + 1}`]])} key={`language-${index}`} onClick={goTo(language)}>{language.name}</div>
       )
    }
 

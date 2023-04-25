@@ -60,6 +60,10 @@ export const languages = [
    },
 ]
 
+function getLanguage(slug) {
+   return languages.find(item => item.slug === slug)
+}
+
 export const languageGames = {
    "italian": {
       type: "aaa",
@@ -84,7 +88,7 @@ export const languageGames = {
    },
    "spanish": {
       type: "memory",
-      component: <Memory language={"spanish"} />,
+      component: <Memory language={getLanguage("spanish")} />,
       data: {
          instructions: "Flip the tiles and match the pictures with the words they represent",
          cards: [
@@ -110,7 +114,7 @@ export const languageGames = {
    },
    "russian": {
       type: "wordOrder",
-      component: <WordOrder language={"russian"} />,
+      component: <WordOrder language={getLanguage("russian")} />,
       data: {
          instructions: "Translate the following sentence placing the words in the right order:",
          source: "My name is Lidia, I'm 28 years old and I live in Turin.",
@@ -120,7 +124,7 @@ export const languageGames = {
    },
    "portuguese": {
       type: "wordSearch",
-      component: <WordSearch language={"portuguese"} />,
+      component: <WordSearch language={getLanguage("portuguese")} />,
       data: {
          instructions: "Find the names of the days of the week:",
          matrix: [

@@ -5,6 +5,7 @@ import Button from '../ui/button';
 
 // modules
 import clsx from 'clsx';
+import { useRouter } from 'next/router'
 
 // styles
 import styles from './languageGames.module.css'
@@ -15,7 +16,8 @@ import { generateSolutionFromMatrix, generateWordsGrid } from '@/utils/playing';
 
 function WordSearch({ language }) {
 
-   const gameItem = languageGames[language];
+   const router = useRouter();
+   const gameItem = languageGames[language.slug];
    const { matrix, indicator } = gameItem.data;
    const emptyGrid = useMemo(() => generateWordsGrid(12, 13), [])
    const solution = useMemo(() => generateSolutionFromMatrix(matrix, indicator), [matrix])
@@ -29,6 +31,9 @@ function WordSearch({ language }) {
       if (JSON.stringify(updatedGrid) === JSON.stringify(solution)) {
          setTimeout(() => {
             alert("CORRECT!")
+            router.push({
+               pathname: "/hello",
+            })
          }, 250);
       }
    }

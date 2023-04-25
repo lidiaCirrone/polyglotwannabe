@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Button from '../ui/button';
 
 // modules
-import clsx from 'clsx';
+import { useRouter } from 'next/router'
 
 // styles
 import styles from './languageGames.module.css'
@@ -15,7 +15,8 @@ import { shuffle } from '@/utils/playing';
 
 function WordOrder({ language }) {
 
-   const gameItem = languageGames[language];
+   const router = useRouter();
+   const gameItem = languageGames[language.slug];
 
    const [state, setState] = useState({
       words: [],
@@ -49,6 +50,9 @@ function WordOrder({ language }) {
          if (updatedWords.length === 0) {
             if (updatedChosenWords.join(" ") === gameItem.data.solution) {
                alert("CORRECT!")
+               router.push({
+                  pathname: "/hello",
+               })
             } else {
                alert("try again :(")
                resetState();

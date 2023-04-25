@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 // components
 import FlippableCard from './flippableCard';
 
+// modules
+import { useRouter } from 'next/router'
+
 // styles
 import styles from './memory.module.css'
 
@@ -14,7 +17,8 @@ import { shuffle } from '@/utils/playing';
 
 function Memory({ language }) {
 
-   const gameItem = languageGames[language];
+   const router = useRouter();
+   const gameItem = languageGames[language.slug];
    const [cards, setCards] = useState([]);
    const [cardOne, setCardOne] = useState(null);
    const [cardTwo, setCardTwo] = useState(null);
@@ -36,6 +40,9 @@ function Memory({ language }) {
       if (cards.length !== 0 && matchedCards.length === cards.length) {
          setTimeout(() => {
             alert("CORRECT!")
+            router.push({
+               pathname: "/hello",
+            })
          }, 1000);
       }
    }, [cards])
