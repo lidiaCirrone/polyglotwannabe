@@ -1,3 +1,4 @@
+import Color from "@/components/languageGames/color"
 import Memory from "@/components/languageGames/memory/memory"
 import WordOrder from "@/components/languageGames/wordOrder"
 import WordSearch from "@/components/languageGames/wordSearch"
@@ -62,6 +63,18 @@ export const languages = [
 
 export function getLanguage(slug) {
    return languages.find(item => item.slug === slug)
+}
+
+export function createColorGameSolution({ text, solution }) {
+   let splitText = text.split(" ");
+   const solutionArray = splitText.map((word, i) => {
+      return {
+         id: i,
+         word,
+         type: solution[word] ?? ""
+      }
+   })
+   return solutionArray;
 }
 
 export const languageGames = {
@@ -146,10 +159,36 @@ export const languageGames = {
       }
    },
    "swedish": {
-      type: "aaa",
-      component: <p>Swedish component here</p>,
+      type: "color",
+      component: <Color language={getLanguage("swedish")} />,
       data: {
-         key: "value"
+         instructions: "Choose the color and tap on the related part of speech",
+         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec libero eget arcu scelerisque finibus. Quisque quis cursus nibh, eu egestas neque. Vivamus interdum nibh non lorem placerat fermentum. Donec enim odio, fringilla et tincidunt ut, blandit ornare dui. Nunc hendrerit auctor magna imperdiet commodo. Cras non sapien felis. Duis et porttitor nunc, nec ultrices magna. Nulla tortor nunc, ullamcorper id nunc nec, tincidunt molestie nisl. Aliquam erat volutpat. Sed eget pharetra est. Etiam sit amet odio tortor. Aenean eu semper orci.\n\nNulla ullamcorper bibendum bibendum. Vestibulum ac congue tortor, a dictum nibh. Aliquam gravida lacus mauris, vitae varius lorem ullamcorper in. Phasellus sollicitudin pellentesque neque, ut feugiat risus malesuada ut. Donec varius dolor sit amet auctor ornare. Curabitur a augue nec sapien gravida vulputate nec at mi. In efficitur auctor diam, sit amet tempus eros rhoncus pellentesque. Vivamus blandit imperdiet leo, vel semper enim laoreet vitae. Duis vitae risus id lorem rhoncus mattis vel sed ligula. Nunc lobortis vestibulum nulla id placerat.",
+         solution: {
+            "Etiam": "adverb",
+            "semper": "adverb",
+            "libero": "adjective",
+            "magna": "adjective",
+            "nulla": "adjective",
+            "sit": "verb",
+            "elit": "verb",
+            "placerat": "verb",
+            "Vivamus": "verb",
+         },
+         colors: [
+            {
+               type: "adverb",
+               color: "#fcae7c"
+            },
+            {
+               type: "adjective",
+               color: "#f9ffB5"
+            },
+            {
+               type: "verb",
+               color: "#b3f5bc"
+            },
+         ]
       }
    },
 }
