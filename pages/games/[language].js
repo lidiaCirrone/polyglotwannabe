@@ -7,16 +7,12 @@ import NavigationBar from '@/components/ui/navigationBar'
 // modules
 import { useRouter } from 'next/router'
 
-// redux
-import { useSelector } from 'react-redux'
-
 // utils
 import { languageGames } from '@/utils/globalVariables';
 
 const Language = () => {
 
    const router = useRouter();
-   const language = useSelector((state) => state.user.language);
    const gameLanguage = router.query.language
 
    if (!gameLanguage) return <p>No data...</p>
