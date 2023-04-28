@@ -1,4 +1,5 @@
 import Color from "@/components/languageGames/color"
+import DragAndDrop from "@/components/languageGames/dragAndDrop"
 import FillTheGaps from "@/components/languageGames/fillTheGaps"
 import Memory from "@/components/languageGames/memory/memory"
 import WordOrder from "@/components/languageGames/wordOrder"
@@ -95,10 +96,12 @@ export const languageGames = {
       }
    },
    "english": {
-      type: "aaa",
-      component: <p>English component here</p>,
+      type: "dragAndDrop",
+      component: <DragAndDrop language={getLanguage("english")} />,
       data: {
-         key: "value"
+         instructions: "Drag and drop the sentences in order to create a dialogue that makes sense",
+         sentences: ["fff", "ccc", "eee", "aaa", "ggg", "bbb", "ddd"],
+         solution: ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg"],
       }
    },
    "french": {
