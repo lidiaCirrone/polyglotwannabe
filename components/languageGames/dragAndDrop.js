@@ -26,48 +26,40 @@ function DragAndDrop({ language }) {
    function checkIfAllCorrect(items) {
       let verify = true;
       for (let i = 0; i < items.length; i++) {
-         console.log("i: ", i);
-         console.log("items[i]: ", items[i]);
-         if (i.toString() !== items[i].id) {
+         if (solution[i] !== items[i]) {
             verify = false;
             break;
          } else {
             verify = true;
          }
       }
-      console.log("verify: ", verify);
       setIsCorrect(verify);
       if (verify) {
          setTimeout(() => {
             alert("CORRECT!")
-            // router.push({
-            //    pathname: "/hello",
-            // })
+            router.push({
+               pathname: "/hello",
+            })
          }, 250);
       }
    }
 
    const handleDragEnd = ({ destination, source }) => {
-      console.log("handleDragEnd callback");
       if (!destination) return;
       let updatedSentences = Array.from(sentences);
-      // let updatedSentences = structuredClone(sentences);
       const [removed] = updatedSentences.splice(source.index, 1);
       updatedSentences.splice(destination.index, 0, removed);
-      console.log("\n\nupdatedSentences: ", updatedSentences);
       checkIfAllCorrect(updatedSentences);
       setSentences(updatedSentences);
    }
 
    useEffect(() => {
-      const shuffled = structuredClone(solution);
-      const updated = shuffled.map((item, key) => { return { id: key.toString(), sentence: item } })
+      const updated = structuredClone(solution);
       shuffle(updated);
-      // console.log("updated: ", updated);
       setSentences(updated);
    }, [])
 
-   const renderSentences = (item, index) => (
+   const renderSentences = (sentence, index) => (
       <Draggable key={`sentence-${index}`} index={index} draggableId={`sentence-${index}`} isDragDisabled={isCorrect}>
          {(provided, snapshot) =>
             <div
@@ -82,7 +74,7 @@ function DragAndDrop({ language }) {
                      : isCorrect ? "#b3f5bc" : "transparent"
                }}
             >
-               {item.sentence}
+               {sentence}
             </div>
          }
       </Draggable>
