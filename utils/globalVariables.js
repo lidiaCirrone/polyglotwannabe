@@ -100,8 +100,17 @@ export const languageGames = {
       component: <DragAndDrop language={getLanguage("english")} />,
       data: {
          instructions: "Drag and drop the sentences in order to create a dialogue that makes sense",
-         sentences: ["fff", "ccc", "eee", "aaa", "ggg", "bbb", "ddd"],
-         solution: ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg"],
+         solution: [
+            "Good afternoon, can I see a menu, please?",
+            "Certainly, here you are.",
+            "Thank you. What's today's special?",
+            "Grilled tuna and cheese on rye.",
+            "That sounds good. I'll have that.",
+            "Would you like something to drink, too?",
+            "Yes, I'd like a coke.",
+            "Here you are. Enjoy your meal!",
+            "Thank you. "
+         ],
       }
    },
    "french": {
