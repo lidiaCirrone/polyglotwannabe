@@ -12,6 +12,8 @@ import styles from './languageGames.module.css'
 import { languageGames } from "@/utils/globalVariables";
 import { shuffle } from "@/utils/playing";
 
+// Thanks to Robin Wieruch's tutorial: https://www.robinwieruch.de/react-drag-and-drop/
+
 function DragAndDrop({ language }) {
 
    const router = useRouter();
@@ -38,9 +40,9 @@ function DragAndDrop({ language }) {
       if (verify) {
          setTimeout(() => {
             alert("CORRECT!")
-            router.push({
-               pathname: "/hello",
-            })
+            // router.push({
+            //    pathname: "/hello",
+            // })
          }, 250);
       }
    }
@@ -66,13 +68,19 @@ function DragAndDrop({ language }) {
    }, [])
 
    const renderSentences = (item, index) => (
-      <Draggable key={item.id} index={index} draggableId={item.id} isDragDisabled={isCorrect}>
+      <Draggable key={`sentence-${index}`} index={index} draggableId={`sentence-${index}`} isDragDisabled={isCorrect}>
          {(provided, snapshot) =>
             <div
                ref={provided.innerRef}
                {...provided.draggableProps}
                {...provided.dragHandleProps}
                className={clsx(styles.sentence, "unselectable", isCorrect && styles["correct-sentence"])}
+               style={{
+                  ...provided.draggableProps.style,
+                  backgroundColor: snapshot.isDragging
+                     ? "#f0f0f0"
+                     : isCorrect ? "#b3f5bc" : "transparent"
+               }}
             >
                {item.sentence}
             </div>
