@@ -18,7 +18,7 @@ function FlippableCard({ card, onClick, flipped, disabled, isWrong }) {
 
    return (
       <div className={styles["card-container"]}>
-         <div className={clsx(styles.card, flipped && styles.flipped, matched && styles.correct, flipped && isWrong && styles.wrong, disabled && styles.disabled)} onClick={handleCardFlip}>
+         <div className={clsx(styles.card, "unselectable", flipped && styles.flipped, matched && styles.correct, flipped && isWrong && styles.wrong, disabled && styles.disabled)} onClick={handleCardFlip}>
             <div className={clsx(styles["card-back"])}>{wrappedContent}</div>
             <div className={styles["card-front"]} />
          </div>

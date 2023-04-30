@@ -44,10 +44,10 @@ function Color({ language }) {
    }
 
    const renderColors = ((item, i) => <div style={{ backgroundColor: item.color }} className={clsx
-      (styles.color, state.currentColor.color !== item.color && styles.opacity)} key={`color-${i}`} onClick={setCurrentColor(item)}>{item.type}</div>)
+      (styles.color, "unselectable", state.currentColor.color !== item.color && styles.opacity)} key={`color-${i}`} onClick={setCurrentColor(item)}>{item.type}</div>)
 
    const renderWords = ((item, i) =>
-      <div key={`word-${i}`} className={styles.word} style={{ backgroundColor: item.selected ? getColorFromType(item.selected) : "transparent" }} onClick={setWordColor(item.id)}>{item.word}</div>
+      <div key={`word-${i}`} className={clsx(styles.word, "unselectable")} style={{ backgroundColor: item.selected ? getColorFromType(item.selected) : "transparent" }} onClick={setWordColor(item.id)}>{item.word}</div>
    )
 
    useEffect(() => {

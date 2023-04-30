@@ -5,6 +5,7 @@ import Button from '../ui/button';
 
 // modules
 import { useRouter } from 'next/router'
+import clsx from 'clsx';
 
 // styles
 import styles from './languageGames.module.css'
@@ -53,11 +54,11 @@ function WordOrder({ language }) {
    }
 
    const renderWords = (item, key) => (
-      <div className={styles["word-box"]} key={`word-order-${key}`} onClick={toggleWord(item)}>{item}</div>
+      <div className={clsx(styles["word-box"], "unselectable")} key={`word-order-${key}`} onClick={toggleWord(item)}>{item}</div>
    )
 
    const renderChosenWords = (item, key) => (
-      <div className={styles["chosen-word-box"]} key={`chosen-word-${key}`} onClick={toggleWord(DataTransferItem)}>{item}</div>
+      <div className={clsx(styles["chosen-word-box"], "unselectable")} key={`chosen-word-${key}`} onClick={toggleWord(item)}>{item}</div>
    )
 
    const resetState = () => {

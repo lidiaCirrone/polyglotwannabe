@@ -47,7 +47,7 @@ function WordSearch({ language }) {
          matrix.map((row, r) => (
             <div key={r} className={styles.row}>
                {row.map((column, c) => (
-                  <div key={c} className={clsx([styles.column, grid[r][c] === 1 && styles.selected])} onClick={toggleLetter(r, c)}>{column.slice(0, 1)}</div>
+                  <div key={c} className={clsx([styles.column, "unselectable", grid[r][c] === 1 && styles.selected])} onClick={toggleLetter(r, c)}>{column.slice(0, 1)}</div>
                ))}
             </div>
          )

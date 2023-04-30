@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
+// modules
 import { useRouter } from "next/router";
+import clsx from "clsx";
 
 // styles
 import styles from "./fillTheGaps.module.css"
@@ -50,7 +52,7 @@ function FillTheGaps({ language }) {
       return (
          <div
             key={`word-${i}`}
-            className={styles.word}
+            className={clsx(styles.word, "unselectable")}
          >
             {word === "..." ? <input
                type="text"

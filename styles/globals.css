@@ -8,6 +8,7 @@
    --accent: #39bdff;
    --button: #b1b1b1;
    --disabled: #d9d9d9;
+   --grey: #7b7b7b;
    --rainbow-one: #fa9189;
    --rainbow-two: #fcae7c;
    --rainbow-three: #ffe699;
@@ -113,4 +114,10 @@ input {
 .small {
    font-size: .8rem;
    font-style: italic;
+}
+
+.unselectable {
+   -webkit-user-select: none; /* Safari */
+   -ms-user-select: none; /* IE 10+ */
+   user-select: none;
 }
