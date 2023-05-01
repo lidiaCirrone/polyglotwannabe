@@ -1,0 +1,24 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 70%;
+   margin: 0 auto;
+}
+
+.sentence {
+   color: var(--grey);
+   text-align: center;
+   width: 100%;
+   margin: 0.3rem 0;
+   padding: 0.5rem;
+   border: 2px solid var(--disabled);
+   border-radius: 6px;
+   cursor: pointer;
+}
+
+.correct {
+   color: black;
+   background-color: var(--rainbow-five);
+   border-color: var(--rainbow-five);
+}

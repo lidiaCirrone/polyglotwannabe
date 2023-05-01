@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx';
 
 // styles
-import styles from './languageGames.module.css'
+import styles from './wordOrder.module.css'
 
 // utils
 import { languageGames } from '@/utils/globalVariables';
@@ -58,11 +58,11 @@ function WordOrder({ language }) {
    }
 
    const renderWords = (item, key) => (
-      <div className={clsx(styles["word-box"], "unselectable")} key={`word-order-${key}`} onClick={toggleWord(item)}>{item}</div>
+      <div className={clsx(styles.word, "unselectable")} key={`word-order-${key}`} onClick={toggleWord(item)}>{item}</div>
    )
 
    const renderChosenWords = (item, key) => (
-      <div className={clsx(styles["chosen-word-box"], "unselectable", state.isCorrect && styles.correct)} key={`chosen-word-${key}`} onClick={toggleWord(item)}>{item}</div>
+      <div className={clsx(styles.chosen, "unselectable", state.isCorrect && styles.correct)} key={`chosen-word-${key}`} onClick={toggleWord(item)}>{item}</div>
    )
 
    const resetState = () => {
@@ -88,9 +88,9 @@ function WordOrder({ language }) {
       <>
          <p className={"bold margin-bottom"}>{gameItem.data.source}</p>
          {state.words &&
-            <div className={styles["words-container"]}>{state.words.map(renderWords)}</div>
+            <div className={styles["container"]}>{state.words.map(renderWords)}</div>
          }
-         <div className={clsx(styles["chosen-words-container"], state.isCorrect && styles["correct-container"])}>{state.chosenWords.map(renderChosenWords)}</div>
+         <div className={clsx(styles["chosen-container"], state.isCorrect && styles["container-correct"])}>{state.chosenWords.map(renderChosenWords)}</div>
          <Button label={"Reset"} onClick={resetState} />
       </>
    )

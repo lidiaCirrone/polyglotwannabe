@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 
 // styles
-import styles from './languageGames.module.css'
+import styles from './dragAndDrop.module.css'
 
 //utils
 import { languageGames } from "@/utils/globalVariables";
@@ -66,7 +66,7 @@ function DragAndDrop({ language }) {
                ref={provided.innerRef}
                {...provided.draggableProps}
                {...provided.dragHandleProps}
-               className={clsx(styles.sentence, "unselectable", isCorrect && styles["correct-sentence"])}
+               className={clsx(styles.sentence, "unselectable", isCorrect && styles.correct)}
                style={{
                   ...provided.draggableProps.style,
                   backgroundColor: snapshot.isDragging
@@ -84,7 +84,7 @@ function DragAndDrop({ language }) {
       <DragDropContext onDragEnd={handleDragEnd}>
          <Droppable droppableId="droppable">
             {(provided) => (
-               <div ref={provided.innerRef} {...provided.droppableProps} className={styles["sentences-container"]}>
+               <div ref={provided.innerRef} {...provided.droppableProps} className={styles.container}>
                   {sentences.map(renderSentences)}
                   {provided.placeholder}
                </div>

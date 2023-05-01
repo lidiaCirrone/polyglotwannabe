@@ -1,33 +1,4 @@
-/* drag & drop */
-
-.sentences-container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 70%;
-   margin: 0 auto;
-}
-
-.sentence {
-   color: var(--grey);
-   text-align: center;
-   width: 100%;
-   margin: 0.3rem 0;
-   padding: 0.5rem;
-   border: 2px solid var(--disabled);
-   border-radius: 6px;
-   cursor: pointer;
-}
-
-.correct-sentence {
-   color: black;
-   background-color: var(--rainbow-five);
-   border-color: var(--rainbow-five);
-}
-
-/* word order */
-
-.words-container {
+.container {
    height: 86px;
    display: flex;
    flex-wrap: wrap;
@@ -36,7 +7,7 @@
    align-items: flex-start;
 }
 
-.chosen-words-container {
+.chosen-container {
    min-height: 80px;
    border: 2px solid var(--disabled);
    border-radius: 6px;
@@ -47,7 +18,7 @@
    align-items: flex-start;
 }
 
-.word-box {
+.word {
    background-color: #f8f8f8;
    color: #777777;
    padding: 5px 20px;
@@ -57,7 +28,7 @@
    margin: 4px;
 }
 
-.chosen-word-box {
+.chosen {
    background-color: #adadad;
    color: #ffffff;
    padding: 5px 20px;
@@ -71,6 +42,6 @@
    background-color: #79d786;
 }
 
-.correct-container {
+.container-correct {
    border-color: var(--rainbow-five);
 }
