@@ -74,30 +74,3 @@
 .correct-container {
    border-color: var(--rainbow-five);
 }
-
-/* word search */
-
-.grid {
-   margin: 1rem;
-}
-
-.row {
-   display: flex;
-   align-items: center;
-}
-
-.column {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 50px;
-   aspect-ratio: 1;
-   border: 1px solid #f3f3f3;
-   cursor: pointer;
-}
-
-.selected {
-   color: #fff;
-   border-color: #fff;
-   background-color: var(--accent);
-}

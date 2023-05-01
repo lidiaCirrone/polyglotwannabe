@@ -8,7 +8,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router'
 
 // styles
-import styles from './languageGames.module.css'
+import styles from './wordSearch.module.css'
 
 // utils
 import { languageGames } from '@/utils/globalVariables';
@@ -23,12 +23,15 @@ function WordSearch({ language }) {
    const solution = useMemo(() => generateSolutionFromMatrix(matrix, indicator), [matrix])
 
    const [grid, setGrid] = useState(emptyGrid);
+   const [isCorrect, setIsCorrect] = useState(false);
 
    const toggleLetter = (r, c) => () => {
       const updatedGrid = structuredClone(grid);
       updatedGrid[r][c] = updatedGrid[r][c] === 0 ? 1 : 0;
       setGrid(updatedGrid);
-      if (JSON.stringify(updatedGrid) === JSON.stringify(solution)) {
+      let verify = JSON.stringify(updatedGrid) === JSON.stringify(solution);
+      if (verify) {
+         setIsCorrect(true);
          setTimeout(() => {
             alert("CORRECT!")
             router.push({
@@ -47,7 +50,7 @@ function WordSearch({ language }) {
          matrix.map((row, r) => (
             <div key={r} className={styles.row}>
                {row.map((column, c) => (
-                  <div key={c} className={clsx([styles.column, "unselectable", grid[r][c] === 1 && styles.selected])} onClick={toggleLetter(r, c)}>{column.slice(0, 1)}</div>
+                  <div key={c} className={clsx([styles.column, "unselectable", grid[r][c] === 1 && styles.selected, isCorrect && grid[r][c] === 1 && styles.correct])} onClick={toggleLetter(r, c)}>{column.slice(0, 1)}</div>
                ))}
             </div>
          )
