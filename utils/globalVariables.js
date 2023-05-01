@@ -4,7 +4,7 @@ import FillTheGaps from "@/components/languageGames/fillTheGaps"
 import Memory from "@/components/languageGames/memory/memory"
 import WordOrder from "@/components/languageGames/wordOrder"
 import WordSearch from "@/components/languageGames/wordSearch"
-import Wordle from "@/components/languageGames/wordle/wordle"
+import WordleContainer from "@/components/languageGames/wordle/wordleContainer"
 
 /**
  * `code` the 2-letter ISO-639-1 code for that language
@@ -116,9 +116,13 @@ export const languageGames = {
    },
    "french": {
       type: "wordle",
-      component: <Wordle language={getLanguage("french")} />,
+      component: <WordleContainer language={getLanguage("french")} />,
       data: {
-         key: "value"
+         instructions: "The Wordle game, but with 6 letters",
+         solution: "langue",
+         // solutions: [
+         //    { id: 1, word: "langue" }
+         // ],
       }
    },
    "spanish": {
