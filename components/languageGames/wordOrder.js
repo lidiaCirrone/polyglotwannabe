@@ -20,8 +20,9 @@ function WordOrder({ language }) {
    const gameItem = languageGames[language.slug];
 
    const [state, setState] = useState({
-      words: [],
-      chosenWords: []
+      words: null,
+      chosenWords: [],
+      isCorrect: false
    })
 
    const toggleWord = (word) => () => {
@@ -34,9 +35,12 @@ function WordOrder({ language }) {
          updatedChosenWords.splice(updatedChosenWords.indexOf(word), 1);
          updatedWords.push(word);
       }
+      let isCorrect = updatedWords.length === 0 && updatedChosenWords.join(" ") === gameItem.data.solution;
       setState({
+         ...state,
          words: updatedWords,
          chosenWords: updatedChosenWords,
+         isCorrect
       })
       setTimeout(() => {
          if (updatedWords.length === 0) {
@@ -58,7 +62,7 @@ function WordOrder({ language }) {
    )
 
    const renderChosenWords = (item, key) => (
-      <div className={clsx(styles["chosen-word-box"], "unselectable")} key={`chosen-word-${key}`} onClick={toggleWord(item)}>{item}</div>
+      <div className={clsx(styles["chosen-word-box"], "unselectable", state.isCorrect && styles.correct)} key={`chosen-word-${key}`} onClick={toggleWord(item)}>{item}</div>
    )
 
    const resetState = () => {
@@ -66,7 +70,8 @@ function WordOrder({ language }) {
       shuffle(gameWords);
       setState({
          words: gameWords,
-         chosenWords: []
+         chosenWords: [],
+         isCorrect: false
       })
    }
 
@@ -82,8 +87,10 @@ function WordOrder({ language }) {
    return (
       <>
          <p className={"bold margin-bottom"}>{gameItem.data.source}</p>
-         <div className={styles["words-container"]}>{state.words.map(renderWords)}</div>
-         <div className={styles["chosen-words-container"]}>{state.chosenWords.map(renderChosenWords)}</div>
+         {state.words &&
+            <div className={styles["words-container"]}>{state.words.map(renderWords)}</div>
+         }
+         <div className={clsx(styles["chosen-words-container"], state.isCorrect && styles["correct-container"])}>{state.chosenWords.map(renderChosenWords)}</div>
          <Button label={"Reset"} onClick={resetState} />
       </>
    )
