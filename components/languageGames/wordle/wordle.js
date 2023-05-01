@@ -15,7 +15,7 @@ function Wordle({ solution }) {
 
    return (
       <div>
-         <p>here is Wordle</p>
+         <p>solution: {solution}</p>
          <p>currentGuess: {currentGuess}</p>
       </div>
    );
