@@ -87,6 +87,11 @@ input {
    margin: 1rem;
 }
 
+.margin-x-half {
+   margin-left: .5rem;
+   margin-right: .5rem;
+}
+
 .margin-top {
    margin-top: 1rem;
 }

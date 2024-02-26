@@ -27,7 +27,16 @@
    border-radius: 50%
 }
 
+.duolingo-widget li, .duolingo-widget li span {
+   display: flex;
+   align-items: center;
+}
+
 .flag {
+   margin: 0 0.3rem
+}
+
+.duolingo-widget li .flag {
    margin: 0 0.1rem
 }
 

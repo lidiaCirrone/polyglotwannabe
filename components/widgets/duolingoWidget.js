@@ -81,7 +81,7 @@ export default function DuolingoWidget() {
    function renderCourses([source, targets], key) {
       return (
          <li key={`${source}-${key}`}>
-            <img className={styles.flag} src={`/flags/${source}.svg`} width={20} /> → {targets.map(renderTargetLanguages)}
+            {targets.map(renderTargetLanguages)} <span className='margin-x-half'>from</span> <img className={styles.flag} src={`/flags/${source}.svg`} width={20} />
          </li>
       )
    }
