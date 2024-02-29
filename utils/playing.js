@@ -27,3 +27,32 @@ export function generateWordsGrid(rows, columns) {
 export function generateSolutionFromMatrix(matrix, indicator) {
    return matrix.map((row, r) => row.map((col, c) => matrix[r][c].includes(indicator) ? 1 : 0));
 }
+
+export const wordleLetters = [
+   { key: "a" },
+   { key: "b" },
+   { key: "c" },
+   { key: "d" },
+   { key: "e" },
+   { key: "f" },
+   { key: "g" },
+   { key: "h" },
+   { key: "i" },
+   { key: "j" },
+   { key: "k" },
+   { key: "l" },
+   { key: "m" },
+   { key: "n" },
+   { key: "o" },
+   { key: "p" },
+   { key: "q" },
+   { key: "r" },
+   { key: "s" },
+   { key: "t" },
+   { key: "u" },
+   { key: "v" },
+   { key: "w" },
+   { key: "x" },
+   { key: "y" },
+   { key: "z" },
+]

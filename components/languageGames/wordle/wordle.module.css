@@ -19,18 +19,18 @@
 }
 
 .row > div.green {
-   --background-color: #53b95f;
-   --border-color: #53b95f;
+   --background-color: #5ac85a;
+   --border-color: #5ac85a;
 }
 
 .row > div.grey {
-   --background-color: #a4a4a4;
-   --border-color: #a4a4a4;
+   --background-color: #a1a1a1;
+   --border-color: #a1a1a1;
 }
 
 .row > div.yellow {
-   --background-color: #dede3e;
-   --border-color: #dede3e;
+   --background-color: #e2cc68;
+   --border-color: #e2cc68;
 }
 
 .row > div.green,
@@ -63,6 +63,41 @@
    animation: bounce 0.2s ease-in-out forwards;
 }
 
+.keypad {
+   max-width: 500px;
+   margin: 20px auto;
+}
+
+.keypad > div {
+   margin: 5px;
+   width: 40px;
+   height: 40px;
+   background: #eee;
+   display: inline-block;
+   border-radius: 6px;
+   line-height: 40px;
+   text-align: center;
+   cursor: default;
+}
+
+.keypad > div.green {
+   background: #5ac85a;
+   color: #fff;
+   transition: all 0.3s ease-in;
+}
+
+.keypad > div.yellow {
+   background: #e2cc68;
+   color: #fff;
+   transition: all 0.3s ease-in;
+}
+
+.keypad > div.grey {
+   background: #a1a1a1;
+   color: #fff;
+   transition: all 0.3s ease-in;
+}
+
 
 
 /* animations */
@@ -73,17 +108,20 @@
       background-color: white;
       border-color: #bbb;
    }
+
    45% {
       transform: rotateX(90deg);
       background-color: white;
       border-color: #bbb;
    }
+
    55% {
       transform: rotateX(90deg);
       background-color: var(--background-color);
       border-color: var(--border-color);
       color: #eee;
    }
+
    100% {
       transform: rotateX(0);
       background-color: var(--background-color);
@@ -97,9 +135,11 @@
       transform: scale(1);
       border-color: #ddd;
    }
+
    50% {
       transform: scale(1.2);
    }
+
    100% {
       transform: scale(1);
       border-color: #bbb;
