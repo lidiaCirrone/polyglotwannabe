@@ -18,6 +18,9 @@
    --rainbow-seven: #e2cbf7;
    --rainbow-eight: #d1bdff;
 
+   /* sizes */
+   --radius: 6px;
+
    color: var(--primary);
 }
 

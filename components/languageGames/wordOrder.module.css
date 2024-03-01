@@ -10,7 +10,7 @@
 .chosen-container {
    min-height: 80px;
    border: 2px solid var(--disabled);
-   border-radius: 6px;
+   border-radius: var(--radius);
    padding: 0.5rem;
    margin-bottom: 1rem;
    display: flex;
@@ -22,7 +22,7 @@
    background-color: #f8f8f8;
    color: #777777;
    padding: 5px 20px;
-   border-radius: 6px;
+   border-radius: var(--radius);
    border: 2px solid#e6e6e6;
    cursor: pointer;
    margin: 4px;
@@ -32,7 +32,7 @@
    background-color: #adadad;
    color: #ffffff;
    padding: 5px 20px;
-   border-radius: 6px;
+   border-radius: var(--radius);
    border: 2px solid#ffffff;
    cursor: pointer;
    margin: 4px;
