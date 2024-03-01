@@ -118,7 +118,7 @@ export const languageGames = {
       type: "wordle",
       component: <WordleContainer language={getLanguage("french")} />,
       data: {
-         instructions: "The Wordle game, but with 6 letters",
+         instructions: "The Wordle game, but with 6 letters. Start typing a word and press enter when you want it to be validated.",
          solution: "langue",
          // solutions: [
          //    { id: 1, word: "langue" }
