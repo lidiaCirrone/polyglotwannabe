@@ -74,7 +74,7 @@
    height: 40px;
    background: #eee;
    display: inline-block;
-   border-radius: 6px;
+   border-radius: var(--radius);
    line-height: 40px;
    text-align: center;
    cursor: default;
@@ -97,6 +97,15 @@
    color: #fff;
    transition: all 0.3s ease-in;
 }
+ 
+.modal .solution {
+  color: #ff004c;
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 1em 0;
+} 
 
 
 

@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
    language: getLanguage("english"),
+   showModal: false
 }
 
 export const userSlice = createSlice({
@@ -12,9 +13,12 @@ export const userSlice = createSlice({
       setLanguage: (state, action) => {
          state.language = action.payload;
       },
+      setShowModal: (state, action) => {
+         state.showModal = action.payload;
+      },
    },
 })
 
-export const { setLanguage } = userSlice.actions
+export const { setLanguage, setShowModal } = userSlice.actions
 
 export default userSlice.reducer

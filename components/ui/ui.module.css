@@ -37,3 +37,45 @@
    text-decoration: underline;
    cursor: pointer;
 }
+
+
+
+/* modal */
+
+.backdrop {
+   position: fixed;
+   background-color: rgba(0, 0, 0, 0.7);
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal {
+   background-color: white;
+   max-width: 90%;
+   min-height: 30%;
+   padding: 3em;
+   border-radius: var(--radius);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.modal button {
+   align-self: flex-end;
+   padding: 0 .3em;
+   cursor: pointer;
+}
+
+
+/* Tablets and small screens */
+@media (min-width: 481px) {
+   .modal {
+      width: 50%;
+      height: 50%;
+   }
+}
