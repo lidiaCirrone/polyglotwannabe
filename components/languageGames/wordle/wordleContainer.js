@@ -17,7 +17,6 @@ function WordleContainer({ language }) {
 
    return (
       <div>
-         <h3>Wordle (Lingo)</h3>
          {solution && <Wordle solution={solution} />}
       </div>
    )
