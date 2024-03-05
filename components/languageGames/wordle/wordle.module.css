@@ -9,7 +9,7 @@
    justify-content: center;
    align-items: center;
    width: 60px;
-   height: 60px;
+   aspect-ratio: 1;
    border: 1px solid #bbb;
    margin: 4px;
    text-align: center;
@@ -66,14 +66,16 @@
 .keypad {
    max-width: 500px;
    margin: 20px auto;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5em;
+   justify-content: center;
 }
 
 .keypad > div {
-   margin: 5px;
    width: 40px;
-   height: 40px;
+   aspect-ratio: 1;
    background: #eee;
-   display: inline-block;
    border-radius: var(--radius);
    line-height: 40px;
    text-align: center;

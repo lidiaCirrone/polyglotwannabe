@@ -28,7 +28,7 @@ const Language = () => {
                {gameItem ? (
                   <>
                      <h2>Let's play!</h2>
-                     <p className={"margin-bottom"}>{gameItem.data.instructions}</p>
+                     <p className={"mb-2"}>{gameItem.data.instructions}</p>
 
                      {gameItem.component}
                      {gameItem.data.credits && <Credits>{gameItem.data.credits}</Credits>}

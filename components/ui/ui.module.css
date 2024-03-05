@@ -74,6 +74,12 @@
 
 /* Tablets and small screens */
 @media (min-width: 481px) {
+   .container {
+      padding: 5rem;
+      max-width: 600px;
+      margin: 0 auto;
+   }
+
    .modal {
       width: 50%;
       height: 50%;
