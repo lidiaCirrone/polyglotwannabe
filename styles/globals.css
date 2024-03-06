@@ -57,11 +57,9 @@ body {
 }
 
 h2 {
-   margin: 2rem 0 .2rem 0;
    text-transform: uppercase;
    letter-spacing: .2rem;
    word-spacing: 1rem;
-   color: var(--accent);
 }
 
 a {
@@ -80,6 +78,24 @@ ul {
 button,
 input {
    font-family: inherit;
+}
+
+.instructions {
+   background-color: var(--accent);
+   color: #fff;
+}
+
+
+.instructions>div, .game>div {
+   padding: 1rem;
+   max-width: 600px;
+   margin: 0 auto;
+}
+
+@media (min-width: 481px) {
+   .instructions>div, .game>div {
+      padding: 2rem;
+   }
 }
 
 
@@ -109,10 +125,6 @@ input {
 
 .margin-bottom {
    margin-bottom: 1rem;
-}
-
-.mb-2 {
-   margin-bottom: 2rem;
 }
 
 .bold {

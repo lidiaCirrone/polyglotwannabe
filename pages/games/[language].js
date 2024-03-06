@@ -27,11 +27,20 @@ const Language = () => {
             <div>
                {gameItem ? (
                   <>
-                     <h2>Let's play!</h2>
-                     <p className={"mb-2"}>{gameItem.data.instructions}</p>
+                     <div className={"instructions"}>
+                        <div>
+                           <h2 className={"margin-bottom"}>Let's play!</h2>
+                           <p>{gameItem.data.instructions}</p>
+                        </div>
+                     </div>
 
-                     {gameItem.component}
-                     {gameItem.data.credits && <Credits>{gameItem.data.credits}</Credits>}
+                     <div className={"game"}>
+                        <div>
+                           {gameItem.component}
+                           {gameItem.data.credits && <Credits>{gameItem.data.credits}</Credits>}
+                        </div>
+                     </div>
+
                   </>
                ) : <>
                   <h2>{":("}</h2>
