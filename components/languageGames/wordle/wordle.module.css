@@ -75,11 +75,23 @@
 .keypad > div {
    width: 40px;
    aspect-ratio: 1;
-   background: #eee;
    border-radius: var(--radius);
-   line-height: 40px;
-   text-align: center;
-   cursor: default;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.keypad > div:not(.key) {
+   background: #eee;
+}
+
+.keypad > div:not(.key):hover {
+   background: #ddd;
+}
+
+.keypad > div:hover svg {
+   fill: var(--grey);
 }
 
 .keypad > div.green {

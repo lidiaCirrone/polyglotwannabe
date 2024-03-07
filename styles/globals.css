@@ -145,3 +145,13 @@ input {
    -ms-user-select: none; /* IE 10+ */
    user-select: none;
 }
+
+.flex-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.width-half {
+   width: 50%;
+}
