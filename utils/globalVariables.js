@@ -118,16 +118,17 @@ export const languageGames = {
       type: "wordle",
       component: <WordleContainer language={getLanguage("french")} />,
       data: {
-         instructions: "The Wordle game, but with 6 letters. Start typing a word and press enter when you want it to be validated.",
+         instructions: "Guess a word in 6 tries. Start typing and press enter when you want your guess to be validated. After each guess, the tiles will change color based on how close you are to the solution: green (correct letter), yellow (that letter exists, but not in that location) or grey (that letter is not in the word at all).",
          solution: "langue",
          // solutions: [
-         //    { id: 1, word: "langue" }
-         // ],
-      }
-   },
-   "spanish": {
-      type: "memory",
-      component: <Memory language={getLanguage("spanish")} />,
+            //    { id: 1, word: "langue" }
+            // ],
+         credits: <>Based on <a target="_blank" href="https://www.nytimes.com/games/wordle">Wordle</a></>
+         }
+      },
+      "spanish": {
+         type: "memory",
+         component: <Memory language={getLanguage("spanish")} />,
       data: {
          instructions: "Flip the tiles and match the pictures with the words they represent",
          cards: [
