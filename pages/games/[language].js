@@ -19,6 +19,7 @@ const Language = () => {
 
    const capitalizedLanguageName = gameLanguage.charAt(0).toUpperCase() + gameLanguage.slice(1)
    const gameItem = languageGames[gameLanguage];
+   const gameTitle = gameItem?.data?.title ?? "Let's play!";
 
    return (
       <Layout pageName={capitalizedLanguageName} pageDescription={capitalizedLanguageName}>
@@ -29,7 +30,7 @@ const Language = () => {
                   <>
                      <div className={"instructions"}>
                         <div>
-                           <h2 className={"margin-bottom"}>Let's play!</h2>
+                           <h2 className={"margin-bottom"}>{gameTitle}</h2>
                            <p>{gameItem.data.instructions}</p>
                         </div>
                      </div>

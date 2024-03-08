@@ -130,7 +130,8 @@ export const languageGames = {
       type: "memory",
       component: <Memory language={getLanguage("spanish")} />,
       data: {
-         instructions: "Flip the tiles and match the pictures with the words they represent",
+         title: "Memorama (casi)",
+         instructions: "Destapa las cartas de dos en dos para unir las imágenes con las palabras que representan",
          cards: [
             { id: 0, label: "cherry", content: "/games/memory/cherry.png", matched: false },
             { id: 1, label: "cherry", content: "la cereza", matched: false },
@@ -149,7 +150,7 @@ export const languageGames = {
             { id: 14, label: "orange juice", content: "/games/memory/orange_juice.png", matched: false },
             { id: 15, label: "orange juice", content: "el zumo de naranja", matched: false },
          ],
-         credits: <><a target="_blank" href="https://iconos8.es/icon/set/comida/doodle">Iconos de comida</a> by <a target="_blank" href="https://icons8.com">Icons8</a></>
+         credits: <><a target="_blank" href="https://iconos8.es/icon/set/comida/doodle">Iconos de comida</a> creados por <a target="_blank" href="https://icons8.com">Icons8</a></>
       }
    },
    "russian": {
