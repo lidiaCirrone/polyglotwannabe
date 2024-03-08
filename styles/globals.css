@@ -18,8 +18,19 @@
    --rainbow-seven: #e2cbf7;
    --rainbow-eight: #d1bdff;
 
+   /* greys */
+   --grey-1: #eee;
+   --grey-2: #ddd;
+   --grey-3: #ccc;
+   --grey-4: #bbb;
+
    /* sizes */
    --radius: 6px;
+
+   /* wordle */
+   --wordle-yes: #5ac85a;
+   --wordle-almost:#a1a1a1;
+   --wordle-no: #e2cc68;
 
    color: var(--primary);
 }
@@ -150,8 +161,4 @@ input {
    display: flex;
    justify-content: center;
    align-items: center;
-}
-
-.width-half {
-   width: 50%;
 }

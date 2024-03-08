@@ -4,62 +4,62 @@
    text-align: center;
 }
 
-.row > div {
+.row>div {
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 60px;
+   width: 3rem;
    aspect-ratio: 1;
-   border: 1px solid #bbb;
+   border: 2px solid var(--grey-2);
    margin: 4px;
    text-align: center;
    text-transform: uppercase;
    font-weight: bold;
-   font-size: 2.5em;
+   font-size: 2em;
 }
 
-.row > div.green {
-   --background-color: #5ac85a;
-   --border-color: #5ac85a;
+.row>div.green {
+   --background-color: var(--wordle-yes);
+   --border-color: var(--wordle-yes);
 }
 
-.row > div.grey {
-   --background-color: #a1a1a1;
-   --border-color: #a1a1a1;
+.row>div.grey {
+   --background-color: var(--wordle-almost);
+   --border-color: var(--wordle-almost);
 }
 
-.row > div.yellow {
-   --background-color: #e2cc68;
-   --border-color: #e2cc68;
+.row>div.yellow {
+   --background-color: var(--wordle-no);
+   --border-color: var(--wordle-no);
 }
 
-.row > div.green,
-.row > div.grey,
-.row > div.yellow {
+.row>div.green,
+.row>div.grey,
+.row>div.yellow {
    animation: flip 0.5s ease forwards;
 }
 
-.row > div:nth-child(2) {
+.row>div:nth-child(2) {
    animation-delay: 0.2s;
 }
 
-.row > div:nth-child(3) {
+.row>div:nth-child(3) {
    animation-delay: 0.4s;
 }
 
-.row > div:nth-child(4) {
+.row>div:nth-child(4) {
    animation-delay: 0.6s;
 }
 
-.row > div:nth-child(5) {
+.row>div:nth-child(5) {
    animation-delay: 0.8s;
 }
 
-.row > div:nth-child(6) {
+.row>div:nth-child(6) {
    animation-delay: 1s;
 }
 
-.row.current > div.filled {
+.row.current>div.filled {
    animation: bounce 0.2s ease-in-out forwards;
 }
 
@@ -72,7 +72,7 @@
    justify-content: center;
 }
 
-.keypad > div {
+.keypad>div {
    width: 40px;
    aspect-ratio: 1;
    border-radius: var(--radius);
@@ -82,44 +82,46 @@
    align-items: center;
 }
 
-.keypad > div:not(.key) {
-   background: #eee;
+.keypad>div:not(.key) {
+   background: var(--grey-1);
 }
 
-.keypad > div:not(.key):hover {
-   background: #ddd;
+@media (hover: hover) and (pointer: fine) {
+   .keypad>div:not(.key):hover {
+      background: var(--grey-2);
+   }
+
+   .keypad>div.key:hover svg {
+      fill: var(--accent);
+   }
 }
 
-.keypad > div:hover svg {
-   fill: var(--grey);
-}
-
-.keypad > div.green {
-   background: #5ac85a;
+.keypad>div.green {
+   background: var(--wordle-yes);
    color: #fff;
    transition: all 0.3s ease-in;
 }
 
-.keypad > div.yellow {
-   background: #e2cc68;
+.keypad>div.yellow {
+   background: var(--wordle-no);
    color: #fff;
    transition: all 0.3s ease-in;
 }
 
-.keypad > div.grey {
-   background: #a1a1a1;
+.keypad>div.grey {
+   background: var(--wordle-almost);
    color: #fff;
    transition: all 0.3s ease-in;
 }
- 
+
 .modal .solution {
-  color: #ff004c;
-  font-weight: bold;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 1em 0;
-} 
+   color: #ff004c;
+   font-weight: bold;
+   font-size: 0.8em;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin: 1em 0;
+}
 
 
 
@@ -129,34 +131,34 @@
    0% {
       transform: rotateX(0);
       background-color: white;
-      border-color: #bbb;
+      border-color: var(--grey-4);
    }
 
    45% {
       transform: rotateX(90deg);
       background-color: white;
-      border-color: #bbb;
+      border-color: var(--grey-4);
    }
 
    55% {
       transform: rotateX(90deg);
       background-color: var(--background-color);
       border-color: var(--border-color);
-      color: #eee;
+      color: var(--grey-1);
    }
 
    100% {
       transform: rotateX(0);
       background-color: var(--background-color);
       border-color: var(--border-color);
-      color: #eee;
+      color: var(--grey-1);
    }
 }
 
 @keyframes bounce {
    0% {
       transform: scale(1);
-      border-color: #ddd;
+      border-color: var(--grey-2);
    }
 
    50% {
@@ -165,6 +167,6 @@
 
    100% {
       transform: scale(1);
-      border-color: #bbb;
+      border-color: var(--grey-4);
    }
 }
