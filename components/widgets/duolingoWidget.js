@@ -55,13 +55,13 @@ export default function DuolingoWidget() {
    if (state.courses.length === 0 || !state.hasResponse) return <p>No data...</p>
 
    return (
-      <section className={clsx([styles["duolingo-widget"], "margin-bottom"])}>
-         <div className={clsx([styles.section, "margin-bottom"])}>
+      <section className={clsx([styles["duolingo-widget"]])}>
+         <div className={clsx([styles["duo-container"]])}>
             <div className={styles["profile-picture"]}>
                <img src={`${state.userData.picture}/xlarge`} />
             </div>
             <div className={styles.duoBox}>
-               <p><Link href={"https://www.duolingo.com/profile/lidiaCirrone"} target={"_blank"}>{state.userData.username}</Link> </p>
+               <h3><Link href={"https://www.duolingo.com/profile/lidiaCirrone"} target={"_blank"}>Lidia Cirrone</Link> </h3>
                <p>aspiring polyglot since {state.creationDate}</p>
                <p><img className={"margin-right"} src={`/icons/streak.svg`} width={16} /> {state.userData.streak}</p>
                <p><img className={"margin-right"} src={`/icons/crowns.svg`} width={20} />  {state.userData.totalXp}</p>
@@ -70,10 +70,12 @@ export default function DuolingoWidget() {
                </p>
             </div>
          </div>
-         <p>also studied:</p>
-         <ul>
-            {state.courses.map(renderCourses)}
-         </ul>
+         <div className={clsx([styles.section])}>
+            <p>also studied:</p>
+            <ul>
+               {state.courses.map(renderCourses)}
+            </ul>
+         </div>
       </section>
 
    )
@@ -81,7 +83,7 @@ export default function DuolingoWidget() {
    function renderCourses([source, targets], key) {
       return (
          <li key={`${source}-${key}`}>
-            {targets.map(renderTargetLanguages)} <span className='margin-x-half'>from</span> <img className={styles.flag} src={`/flags/${source}.svg`} width={20} />
+            {targets.map(renderTargetLanguages)} from <img className={styles.flag} src={`/flags/${source}.svg`} width={20} />
          </li>
       )
    }

@@ -1,17 +1,41 @@
 /* duolingo */
 
+.duo-container {
+   display: flex;
+}
+
 .section {
    display: flex;
-   align-items: center
+   flex-direction: column;
+}
+
+.duolingo-widget {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 1em;
 }
 
 .duolingo-widget p {
    margin: .2rem 0;
-   display: flex;
 }
 
 .duoBox {
    flex: 1;
+}
+
+.duoBox h3 {
+   text-transform: uppercase;
+   margin: 0 0 0.5rem;
+   letter-spacing: .1rem;
+}
+
+.duolingo-widget .flag {
+   vertical-align: middle;
+}
+
+.duoBox .flag {
+   margin: 0 0.1rem;
 }
 
 .duoBox a {
@@ -23,21 +47,12 @@
 }
 
 .profile-picture img {
-   width: 15vw;
-   border-radius: 50%
-}
-
-.duolingo-widget li, .duolingo-widget li span {
-   display: flex;
-   align-items: center;
-}
-
-.flag {
-   margin: 0 0.3rem
+   width: 10vw;
+   border-radius: 50%;
 }
 
 .duolingo-widget li .flag {
-   margin: 0 0.1rem
+   margin-right: 0.2rem;
 }
 
 
@@ -81,15 +96,30 @@
    .duoBox {
       margin-left: 1rem
    }
+}
+
+@media (min-width: 576px) {
+   .duolingo-widget {
+      flex-direction: row;
+   }
 
    .profile-picture {
       display: inline;
    }
-}
 
-@media (min-width: 576px) {
    .flex-item {
       width: 32%;
       margin-bottom: 0;
+   }
+}
+
+@media (min-width: 768px) {
+   .duolingo-widget {
+      flex-direction: column;
+      margin-top: 1em;
+   }
+
+   .profile-picture img {
+      width: 7vw;
    }
 }
