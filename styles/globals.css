@@ -5,7 +5,7 @@
    --primary: #000;
 
    /* common */
-   --accent: #39bdff;
+   --accent: #1b8fc9;
    --button: #b1b1b1;
    --disabled: #d9d9d9;
    --grey: #7b7b7b;
@@ -57,14 +57,12 @@
 
 * {
    box-sizing: border-box;
-   padding: 0;
-   margin: 0;
 }
 
 html,
-body {
-   /* max-width: 100vw; */
-   /* overflow-x: hidden; */
+body, ul {
+   padding: 0;
+   margin: 0;
 }
 
 h2 {
@@ -91,27 +89,107 @@ input {
    font-family: inherit;
 }
 
+.game-box {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
 .instructions {
    background-color: var(--accent);
    color: #fff;
+   max-height: 100vh;
+   position: sticky;
+   top: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 
 .instructions>div, .game>div {
    padding: 1rem;
-   max-width: 600px;
-   margin: 0 auto;
+}
+
+.game-container {
+   height: 100%;
+   display: flex;
+   gap: 3em;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 @media (min-width: 481px) {
+   .game-box {
+      flex-direction: row;
+   }
+   .instructions, .game {
+      flex: 1;
+   }
    .instructions>div, .game>div {
       padding: 2rem;
+   }
+}
+
+@media (min-width: 576px) {
+   .instructions>div {
+      padding: 4rem;
    }
 }
 
 
 
 /* utilities */
+
+.relative {
+   position: relative;
+}
+
+.absolute {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+}
+
+.column {
+   flex-direction: column;
+}
+
+.row {
+   flex-direction: row;
+}
+
+header, main {
+   flex: 1;
+   padding: 1em;
+}
+
+header {
+   background: var(--accent);
+   position: sticky;
+   top: 0;
+   max-height: 100vh;
+}
+
+@media (min-width: 768px) {
+
+   .container {
+      flex-direction: row;
+   }
+   header, main {
+      padding: 3em;
+   }
+}
+
+header * {
+   color: white;
+}
 
 .margin {
    margin: 1rem;
@@ -124,10 +202,6 @@ input {
 
 .margin-top {
    margin-top: 1rem;
-}
-
-.margin-top2 {
-   margin-top: 2rem;
 }
 
 .margin-right {
@@ -161,4 +235,12 @@ input {
    display: flex;
    justify-content: center;
    align-items: center;
+}
+
+.nowrap {
+   text-wrap: nowrap;
+}
+
+.min-h-100 {
+   min-height: 100vh;
 }

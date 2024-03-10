@@ -1,8 +1,6 @@
 .button {
    cursor: pointer;
-   width: 100px;
-   height: 40px;
-   line-height: 40px;
+   padding: 0.7em;
    margin: 0 auto;
    color: var(--button);
    font-weight: bold;

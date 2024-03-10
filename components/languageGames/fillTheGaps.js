@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+// components
+import Button from "../ui/button";
 
 // modules
 import { useRouter } from "next/router";
@@ -62,7 +65,7 @@ function FillTheGaps({ language }) {
          </div>)
    })
 
-   useEffect(() => {
+   function checkAnswer() {
       console.log("\n\nstate.answers: ", state.answers);
       console.log("state.solution: ", state.solution)
       if (Object.keys(state.solution).length !== 0 && JSON.stringify(state.answers) === JSON.stringify(state.solution)) {
@@ -73,12 +76,15 @@ function FillTheGaps({ language }) {
             })
          }, 250);
       }
-   }, [state.answers])
+   }
 
    return (
-      <div className={styles.container}>
-         {text.map(renderText)}
-      </div>
+      <>
+         <div className={styles.container}>
+            {text.map(renderText)}
+         </div>
+         <Button label={"Controlla"} onClick={checkAnswer} />
+      </>
    )
 }
 

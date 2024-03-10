@@ -1,8 +1,8 @@
 .container {
    grid-template-columns: 25% 25% 25% 25%;
    display: grid;
+   width: 100%;
    max-width: 440px;
-   margin: 0 auto;
 }
 
 .card-container {

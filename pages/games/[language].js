@@ -24,21 +24,23 @@ const Language = () => {
    return (
       <Layout pageName={capitalizedLanguageName} pageDescription={capitalizedLanguageName}>
          <Container>
-            <NavigationBar />
-            <div>
+            <div className='game-box'>
                {gameItem ? (
                   <>
                      <div className={"instructions"}>
                         <div>
+                           <NavigationBar />
                            <h2 className={"margin-bottom"}>{gameTitle}</h2>
                            <p>{gameItem.data.instructions}</p>
+                        </div>
+                        <div>
+                           {gameItem.data.credits && <Credits>{gameItem.data.credits}</Credits>}
                         </div>
                      </div>
 
                      <div className={"game"}>
-                        <div>
+                        <div className='game-container'>
                            {gameItem.component}
-                           {gameItem.data.credits && <Credits>{gameItem.data.credits}</Credits>}
                         </div>
                      </div>
 
