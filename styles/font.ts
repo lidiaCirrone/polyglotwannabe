@@ -1,6 +1,6 @@
 // modules
 import localFont from "next/font/local";
 
-const raleway = localFont({ src: "../fonts/Raleway-VariableFont_wght.ttf" });
+const nunito = localFont({ src: "../fonts/Nunito-VariableFont_wght.ttf" });
 
-export { raleway };
+export { nunito };

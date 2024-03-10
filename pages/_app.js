@@ -4,14 +4,14 @@ import { store } from '@/store'
 
 // styles
 import '@/styles/globals.css'
-import { raleway } from '@/styles/font'
+import { nunito } from '@/styles/font'
 
 export default function App({ Component, pageProps }) {
    return (
       <Provider store={store}>
-         <main className={raleway.className}>
+         <div className={`${nunito.className} relative`}>
             <Component  {...pageProps} />
-         </main>
+         </div>
       </Provider>
    )
 }
