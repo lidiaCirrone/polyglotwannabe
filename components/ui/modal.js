@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 // styles
 import styles from './ui.module.css'
-import { raleway } from "@/styles/font";
+import { nunito } from "@/styles/font";
 
 export default function Modal({ children, onClose }) {
 
@@ -20,7 +20,7 @@ export default function Modal({ children, onClose }) {
          {showModal && (
             <ClientOnlyPortal selector="#modal-root">
                <div className={styles["backdrop"]}>
-                  <div className={clsx(styles["modal"], raleway.className)}>
+                  <div className={clsx(styles["modal"], nunito.className)}>
                      {children}
                      <button type="button" onClick={onClose}>
                         Close Modal
