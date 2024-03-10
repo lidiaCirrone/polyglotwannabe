@@ -90,7 +90,8 @@ export const languageGames = {
       type: "fillTheGaps",
       component: <FillTheGaps language={getLanguage("italian")} />,
       data: {
-         instructions: "Fill the gaps by conjugating the verbs inside parentheses in the present tense",
+         title: "Italiano",
+         instructions: "Riempi gli spazi vuoti coniugando i verbi tra parentesi al tempo presente, facendo attenzione a scegliere persona e numero indicati. Premi sul pulsante di verifica quando pensi che la soluzione sia corretta.",
          text: "La lingua ... (essere, 3a p.s.) il sistema o forma storicamente determinata attraverso il quale gli appartenenti a una comunità ... (esprimersi, 3a p.p.) e ... (comunicare, 3a p.p.) tra loro attraverso l'uso di un determinato linguaggio ovvero un insieme di segni scritti (simboli) e/o parlati (suoni).",
          solution: ["è", "si esprimono", "comunicano"],
          credits: <>Taken from <a target="_blank" href="https://it.wikipedia.org/wiki/Lingua_(linguistica)">Wikipedia</a></>
@@ -103,7 +104,7 @@ export const languageGames = {
          instructions: "Drag and drop the sentences in order to create a dialogue that makes sense",
          solution: [
             "Good afternoon, can I see a menu, please?",
-            "Certainly, here you are.",
+            "Sure, here you are.",
             "Thank you. What's today's special?",
             "Grilled tuna and cheese on rye.",
             "That sounds good. I'll have that.",
@@ -123,7 +124,7 @@ export const languageGames = {
          // solutions: [
          //    { id: 1, word: "langue" }
          // ],
-         credits: <>Based on <a target="_blank" href="https://www.nytimes.com/games/wordle">Wordle</a> - <a href="https://iconscout.com/icons/enter-key" class="text-underline font-size-sm" target="_blank">Enter Key</a> by <a href="https://iconscout.com/contributors/dinosoftlabs" class="text-underline font-size-sm">Dinosoft Lab</a> and <a href="https://iconscout.com/icons/backspace" class="text-underline font-size-sm" target="_blank">Backspace</a> by <a href="https://iconscout.com/contributors/yoyonpujiono" class="text-underline font-size-sm">Iconion</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a></>
+         credits: <>Based on <a target="_blank" href="https://www.nytimes.com/games/wordle">Wordle</a><br /><a href="https://iconscout.com/icons/enter-key" class="text-underline font-size-sm" target="_blank">Enter Key</a> by <a href="https://iconscout.com/contributors/dinosoftlabs" class="text-underline font-size-sm">Dinosoft Lab</a> and <a href="https://iconscout.com/icons/backspace" class="text-underline font-size-sm" target="_blank">Backspace</a> by <a href="https://iconscout.com/contributors/yoyonpujiono" class="text-underline font-size-sm">Iconion</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a></>
       }
    },
    "spanish": {
