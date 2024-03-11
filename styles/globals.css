@@ -107,6 +107,11 @@ input {
 }
 
 
+.instructions>div p {
+   white-space: pre-wrap;
+}
+
+
 .instructions>div, .game>div {
    padding: 1rem;
 }

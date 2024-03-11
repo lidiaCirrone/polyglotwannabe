@@ -94,14 +94,15 @@ export const languageGames = {
          instructions: "Riempi gli spazi vuoti coniugando i verbi tra parentesi al tempo presente, facendo attenzione a scegliere persona e numero indicati. Premi sul pulsante di verifica quando pensi che la soluzione sia corretta.",
          text: "La lingua ... (essere, 3a p.s.) il sistema o forma storicamente determinata attraverso il quale gli appartenenti a una comunità ... (esprimersi, 3a p.p.) e ... (comunicare, 3a p.p.) tra loro attraverso l'uso di un determinato linguaggio ovvero un insieme di segni scritti (simboli) e/o parlati (suoni).",
          solution: ["è", "si esprimono", "comunicano"],
-         credits: <>Taken from <a target="_blank" href="https://it.wikipedia.org/wiki/Lingua_(linguistica)">Wikipedia</a></>
+         credits: <>Preso da <a target="_blank" href="https://it.wikipedia.org/wiki/Lingua_(linguistica)">Wikipedia</a></>
       }
    },
    "english": {
       type: "dragAndDrop",
       component: <DragAndDrop language={getLanguage("english")} />,
       data: {
-         instructions: "Drag and drop the sentences in order to create a dialogue that makes sense",
+         title: "English",
+         instructions: "You're in a restaurant and you want to eat something. Drag and drop the sentences in order to create a dialogue that makes sense.\n\nhint: you go first.",
          solution: [
             "Good afternoon, can I see a menu, please?",
             "Sure, here you are.",
@@ -119,12 +120,13 @@ export const languageGames = {
       type: "wordle",
       component: <WordleContainer language={getLanguage("french")} />,
       data: {
+         title: "Français",
          instructions: "Guess a word in 6 tries. Start typing and press enter when you want your guess to be validated. After each guess, the tiles will change color based on how close you are to the solution: green (correct letter), yellow (that letter exists, but not in that location) or grey (that letter is not in the word at all).",
          solution: "langue",
          // solutions: [
          //    { id: 1, word: "langue" }
          // ],
-         credits: <>Based on <a target="_blank" href="https://www.nytimes.com/games/wordle">Wordle</a><br /><a href="https://iconscout.com/icons/enter-key" class="text-underline font-size-sm" target="_blank">Enter Key</a> by <a href="https://iconscout.com/contributors/dinosoftlabs" class="text-underline font-size-sm">Dinosoft Lab</a> and <a href="https://iconscout.com/icons/backspace" class="text-underline font-size-sm" target="_blank">Backspace</a> by <a href="https://iconscout.com/contributors/yoyonpujiono" class="text-underline font-size-sm">Iconion</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a></>
+         credits: <>Basé sur <a target="_blank" href="https://www.nytimes.com/games/wordle">Wordle</a><br /><a href="https://iconscout.com/icons/enter-key" class="text-underline font-size-sm" target="_blank">touche Entrée</a> par <a href="https://iconscout.com/contributors/dinosoftlabs" class="text-underline font-size-sm">Dinosoft Lab</a> et <a href="https://iconscout.com/icons/backspace" class="text-underline font-size-sm" target="_blank">touche Retour</a> par <a href="https://iconscout.com/contributors/yoyonpujiono" class="text-underline font-size-sm">Iconion</a> sur <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a></>
       }
    },
    "spanish": {
@@ -132,7 +134,7 @@ export const languageGames = {
       component: <Memory language={getLanguage("spanish")} />,
       data: {
          title: "Memorama (casi)",
-         instructions: "Destapa las cartas de dos en dos para unir las imágenes con las palabras que representan",
+         instructions: "Destapa las cartas de dos en dos para unir las imágenes con las palabras que representan.",
          cards: [
             { id: 0, label: "cherry", content: "/games/memory/cherry.png", matched: false },
             { id: 1, label: "cherry", content: "la cereza", matched: false },
@@ -158,7 +160,8 @@ export const languageGames = {
       type: "wordOrder",
       component: <WordOrder language={getLanguage("russian")} />,
       data: {
-         instructions: "Translate the following sentence by tapping on the words to place them in the right order",
+         title: "Русский",
+         instructions: "Переведи следующее предложение, нажимая на слова, чтобы расположить их в правильном порядке.\n\nЯ знаю, это очень просто.",
          source: "My name is Lidia, I'm 28 years old and I live in Turin.",
          solution: "Меня зовут Лидия, и мне 28 лет.",
          options: ["Меня", "зовут", "Лидия,", "и", "мне", "28", "лет."]
@@ -168,7 +171,8 @@ export const languageGames = {
       type: "wordSearch",
       component: <WordSearch language={getLanguage("portuguese")} />,
       data: {
-         instructions: "Find the names of the days of the week by tapping on the letters that belong to them",
+         title: "Português",
+         instructions: "Encontre os nomes dos dias da semana tocando nas letras que lhes pertencem.",
          matrix: [
             ["R", "O", "U", "E", "A", "A", "T-", "F", "U", "L", "U", "T", "R"],
             ["S", "U", "S", "A", "B", "S-", "E-", "X-", "T-", "A-", "S", "E", "G"],
@@ -184,14 +188,15 @@ export const languageGames = {
             ["A", "N", "A", "Q", "N", "D", "F", "T", "A-", "E", "B", "T", "A"]
          ],
          indicator: "-",
-         credits: `Taken from "Ana Tavares , Português XXI 1 - Caderno de Exercícios (Grupo LIDEL)"`
+         credits: `Tirado do livro "Ana Tavares , Português XXI 1 - Caderno de Exercícios (Grupo LIDEL)"`
       }
    },
    "swedish": {
       type: "color",
       component: <Color language={getLanguage("swedish")} />,
       data: {
-         instructions: "Choose the color and tap on the related part of speech. If you want to cancel, just tap again!",
+         title: "Svenska",
+         instructions: "Välj färg och tryck på den relaterade delen av talet. Om du vill avbryta, tryck bara igen!",
          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec libero eget arcu scelerisque finibus. Quisque quis cursus nibh, eu egestas neque. Vivamus interdum nibh non lorem placerat fermentum. Donec enim odio, fringilla et tincidunt ut, blandit ornare dui. Nunc hendrerit auctor magna imperdiet commodo. Cras non sapien felis. Duis et porttitor nunc, nec ultrices magna. Nulla tortor nunc, ullamcorper id nunc nec, tincidunt molestie nisl. Aliquam erat volutpat. Sed eget pharetra est. Etiam sit amet odio tortor. Aenean eu semper orci.\n\nNulla ullamcorper bibendum bibendum. Vestibulum ac congue tortor, a dictum nibh. Aliquam gravida lacus mauris, vitae varius lorem ullamcorper in. Phasellus sollicitudin pellentesque neque, ut feugiat risus malesuada ut. Donec varius dolor sit amet auctor ornare. Curabitur a augue nec sapien gravida vulputate nec at mi. In efficitur auctor diam, sit amet tempus eros rhoncus pellentesque. Vivamus blandit imperdiet leo, vel semper enim laoreet vitae. Duis vitae risus id lorem rhoncus mattis vel sed ligula. Nunc lobortis vestibulum nulla id placerat.",
          solution: {
             "Etiam": "adverb",
