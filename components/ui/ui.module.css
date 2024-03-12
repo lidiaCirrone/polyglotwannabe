@@ -32,6 +32,12 @@
    cursor: pointer;
 }
 
+@media (min-width: 576px) {
+   .button {
+      padding: .7em;
+   }
+}
+
 
 
 /* modal */

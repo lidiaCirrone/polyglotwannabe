@@ -18,6 +18,7 @@ export default function Hello() {
          <div className='absolute'>
             <div className='container min-h-100'>
                <header>
+                  <NavigationBar />
                   <DuolingoWidget />
                </header>
                <main>
