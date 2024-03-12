@@ -1,19 +1,16 @@
 /* word search */
 
 .grid {
-   margin: 1rem;
+   grid-template-columns: repeat(13, 1fr);
+   display: grid;
+   width: 100%;
+   max-width: 500px;
 }
 
-.row {
-   display: flex;
-   align-items: center;
-}
-
-.column {
+.cell {
    display: flex;
    justify-content: center;
    align-items: center;
-   width: 50px;
    aspect-ratio: 1;
    border: 1px solid #f3f3f3;
    cursor: pointer;
@@ -28,4 +25,16 @@
 .correct {
    color: #fff;
    background-color: #79d786;
+}
+
+@media (min-width: 481px) {
+   .cell {
+      font-size: .8em;
+   }
+}
+
+@media (min-width: 1025px) {
+   .cell {
+      font-size: 1em;
+   }
 }

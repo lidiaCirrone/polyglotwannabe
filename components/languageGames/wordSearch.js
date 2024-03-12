@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { Fragment, useMemo, useState } from 'react';
 
 // components
 import Button from '../ui/button';
@@ -48,11 +48,11 @@ function WordSearch({ language }) {
    function renderGrid() {
       return (
          matrix.map((row, r) => (
-            <div key={r} className={styles.row}>
-               {row.map((column, c) => (
-                  <div key={c} className={clsx([styles.column, "unselectable", grid[r][c] === 1 && styles.selected, isCorrect && grid[r][c] === 1 && styles.correct])} onClick={toggleLetter(r, c)}>{column.slice(0, 1)}</div>
+            <Fragment key={r}>
+               {row.map((cell, c) => (
+                  <div key={c} className={clsx([styles.cell, "unselectable", grid[r][c] === 1 && styles.selected, isCorrect && grid[r][c] === 1 && styles.correct])} onClick={toggleLetter(r, c)}>{cell.slice(0, 1)}</div>
                ))}
-            </div>
+            </Fragment>
          )
          ))
    }
