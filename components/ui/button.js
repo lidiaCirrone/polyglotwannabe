@@ -3,8 +3,9 @@ import { useRouter } from 'next/router';
 
 // styles
 import styles from './ui.module.css'
+import clsx from 'clsx';
 
-export default function Button({ href, label, query, onClick }) {
+export default function Button({ href, label, query, onClick, disabled = false }) {
    const router = useRouter();
 
    const goTo = () => {
@@ -16,6 +17,6 @@ export default function Button({ href, label, query, onClick }) {
    }
 
    return (
-      <div className={styles.button} onClick={onClick ?? goTo}>{label}</div>
+      <button className={clsx(styles.button, styles.disabled)} onClick={onClick ?? goTo} disabled={disabled}>{label}</button>
    )
 }
