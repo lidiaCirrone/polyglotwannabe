@@ -27,22 +27,14 @@ function FillTheGaps({ language }) {
    const text = createFillTheGapsGameSolution(gameData);
 
    // TO-DO: instad of mapping here, create text already mapped
-   const mappedInputs = Object.fromEntries(mapWords(text).filter(item => item[1] === "..."))
-   console.log("mappedInputs: ", mappedInputs)
-   const ids = Object.keys(mappedInputs);
-   console.log("ids: ", ids)
    const mappedSolution = Object.fromEntries(mapWords(solution))
-   console.log("mappedSolution: ", mappedSolution)
-
    const [state, setState] = useState({
-      answers: mappedInputs,
+      answers: {},
       solution: mappedSolution,
    })
 
    const setInputValue = (i) => (event) => {
       let value = event.target.value;
-      console.log("value: ", value)
-      console.log("i: ", i)
       let updatedAnswers = structuredClone(state.answers);
       updatedAnswers[i] = value;
       setState({
@@ -61,19 +53,24 @@ function FillTheGaps({ language }) {
                type="text"
                className={styles.input}
                onChange={setInputValue(i)}
+               placeholder="..."
             /> : word}
          </div>)
    })
 
    function checkAnswer() {
-      console.log("\n\nstate.answers: ", state.answers);
-      console.log("state.solution: ", state.solution)
-      if (Object.keys(state.solution).length !== 0 && JSON.stringify(state.answers) === JSON.stringify(state.solution)) {
+      if (Object.values(state.answers).join(";") === Object.values(state.solution).join(";")) {
          setTimeout(() => {
             alert("CORRECT!")
             router.push({
                pathname: "/hello",
             })
+         }, 250);
+      } else {
+         setTimeout(() => {
+            alert("try again :(")
+            //  TO-DO
+            // resetState();
          }, 250);
       }
    }
@@ -83,7 +80,7 @@ function FillTheGaps({ language }) {
          <div className={styles.container}>
             {text.map(renderText)}
          </div>
-         <Button label={"Controlla"} onClick={checkAnswer} />
+         <Button label={"Controlla"} onClick={checkAnswer} disabled={Object.values(state.solution).length != Object.values(state.answers).filter(item => item.length).length} />
       </>
    )
 }
