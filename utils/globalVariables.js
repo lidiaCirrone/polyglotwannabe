@@ -171,7 +171,7 @@ export const languageGames = {
       type: "wordSearch",
       component: <WordSearch language={getLanguage("portuguese")} />,
       data: {
-         title: "Português",
+         title: "Sopa de letras",
          instructions: "Encontre os nomes dos dias da semana tocando nas letras que lhes pertencem.",
          matrix: [
             ["R", "O", "U", "E", "A", "A", "T-", "F", "U", "L", "U", "T", "R"],
