@@ -101,7 +101,7 @@ export const languageGames = {
       type: "dragAndDrop",
       component: <DragAndDrop language={getLanguage("english")} />,
       data: {
-         title: "English",
+         title: "Drag and drop",
          instructions: "You're in a restaurant and you want to eat something. Drag and drop the sentences in order to create a dialogue that makes sense.\n\nhint: you go first.",
          solution: [
             "Good afternoon, can I see a menu, please?",
