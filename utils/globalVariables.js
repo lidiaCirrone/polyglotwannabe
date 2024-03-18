@@ -90,7 +90,7 @@ export const languageGames = {
       type: "fillTheGaps",
       component: <FillTheGaps language={getLanguage("italian")} />,
       data: {
-         title: "Italiano",
+         title: "Completa il testo",
          instructions: "Riempi gli spazi vuoti coniugando i verbi tra parentesi al tempo presente, facendo attenzione a scegliere persona e numero indicati. Premi sul pulsante di verifica quando pensi che la soluzione sia corretta.",
          text: "La lingua ... (essere, 3a p.s.) il sistema o forma storicamente determinata attraverso il quale gli appartenenti a una comunità ... (esprimersi, 3a p.p.) e ... (comunicare, 3a p.p.) tra loro attraverso l'uso di un determinato linguaggio ovvero un insieme di segni scritti (simboli) e/o parlati (suoni).",
          solution: ["è", "si esprimono", "comunicano"],
