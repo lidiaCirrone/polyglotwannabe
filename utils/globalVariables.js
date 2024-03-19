@@ -120,7 +120,7 @@ export const languageGames = {
       type: "wordle",
       component: <WordleContainer language={getLanguage("french")} />,
       data: {
-         title: "Français",
+         title: "Wordle (Motus)",
          instructions: "Guess a word in 6 tries. Start typing and press enter when you want your guess to be validated. After each guess, the tiles will change color based on how close you are to the solution: green (correct letter), yellow (that letter exists, but not in that location) or grey (that letter is not in the word at all).",
          solution: "langue",
          // solutions: [
