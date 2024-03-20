@@ -160,7 +160,7 @@ export const languageGames = {
       type: "wordOrder",
       component: <WordOrder language={getLanguage("russian")} />,
       data: {
-         title: "Русский",
+         title: "Порядок слов",
          instructions: "Переведи следующее предложение, нажимая на слова, чтобы расположить их в правильном порядке.\n\nЯ знаю, это очень просто.",
          source: "My name is Lidia, I'm 28 years old and I live in Turin.",
          solution: "Меня зовут Лидия, и мне 28 лет.",
