@@ -85,6 +85,8 @@ export function createFillTheGapsGameSolution({ text }) {
    return text.split(" ");
 }
 
+const myAge = (new Date().getFullYear() - 1994).toString();
+
 export const languageGames = {
    "italian": {
       type: "fillTheGaps",
@@ -162,9 +164,9 @@ export const languageGames = {
       data: {
          title: "Порядок слов",
          instructions: "Переведи следующее предложение, нажимая на слова, чтобы расположить их в правильном порядке.\n\nЯ знаю, это очень просто.",
-         source: "My name is Lidia, I'm 28 years old and I live in Turin.",
-         solution: "Меня зовут Лидия, и мне 28 лет.",
-         options: ["Меня", "зовут", "Лидия,", "и", "мне", "28", "лет."]
+         source: `My name is Lidia, I'm ${myAge} years old and I live in Turin.`,
+         solution: `Меня зовут Лидия, и мне ${myAge} лет.`,
+         options: ["Меня", "зовут", "Лидия,", "и", "мне", myAge, "лет."]
       }
    },
    "portuguese": {
