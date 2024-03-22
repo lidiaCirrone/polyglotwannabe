@@ -91,7 +91,7 @@ function WordOrder({ language }) {
             <div className={styles["container"]}>{state.words.map(renderWords)}</div>
          }
          <div className={clsx(styles["chosen-container"], state.isCorrect && styles["container-correct"])}>{state.chosenWords.map(renderChosenWords)}</div>
-         <Button label={"Reset"} onClick={resetState} />
+         <Button label={"Reset"} onClick={resetState} disabled={!state.chosenWords.length} />
       </>
    )
 }
