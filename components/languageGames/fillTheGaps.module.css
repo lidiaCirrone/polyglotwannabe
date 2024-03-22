@@ -10,7 +10,7 @@
 
 .input {
    width: 100px;
-   padding: 4px;
+   padding: .2em .4em;
    border: 0;
    border-radius: var(--radius);
    background-color: var(--disabled);
