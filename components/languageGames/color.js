@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+// components
+import Button from "../ui/button";
+
 // modules
 import clsx from "clsx";
 import { useRouter } from 'next/router'
@@ -50,6 +53,13 @@ function Color({ language }) {
       <div key={`word-${i}`} className={clsx(styles.word, "unselectable")} style={{ backgroundColor: item.selected ? getColorFromType(item.selected) : "transparent" }} onClick={setWordColor(item.id)}>{item.word}</div>
    )
 
+   const resetState = () => {
+      setState(prevState => ({
+         words: prevState.words.map(w => Object.assign({}, w, {selected: ""})),
+         currentColor: prevState.currentColor
+      }))
+   }
+
    useEffect(() => {
       let missingWords = state.words.filter(item => item.type && item.type !== item.selected);
       if (missingWords.length === 0) {
@@ -70,6 +80,7 @@ function Color({ language }) {
          <div className={styles["words-container"]}>
             {state.words.map(renderWords)}
          </div>
+         <Button label={"Reset"} onClick={resetState} disabled={!state.words.filter(w => w.selected)?.length} />
       </div>
    )
 

@@ -199,10 +199,9 @@ export const languageGames = {
       data: {
          title: "Svenska",
          instructions: "Välj färg och tryck på den relaterade delen av talet. Om du vill avbryta, tryck bara igen!",
-         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec libero eget arcu scelerisque finibus. Quisque quis cursus nibh, eu egestas neque. Vivamus interdum nibh non lorem placerat fermentum. Donec enim odio, fringilla et tincidunt ut, blandit ornare dui. Nunc hendrerit auctor magna imperdiet commodo. Cras non sapien felis. Duis et porttitor nunc, nec ultrices magna. Nulla tortor nunc, ullamcorper id nunc nec, tincidunt molestie nisl. Aliquam erat volutpat. Sed eget pharetra est. Etiam sit amet odio tortor. Aenean eu semper orci.\n\nNulla ullamcorper bibendum bibendum. Vestibulum ac congue tortor, a dictum nibh. Aliquam gravida lacus mauris, vitae varius lorem ullamcorper in. Phasellus sollicitudin pellentesque neque, ut feugiat risus malesuada ut. Donec varius dolor sit amet auctor ornare. Curabitur a augue nec sapien gravida vulputate nec at mi. In efficitur auctor diam, sit amet tempus eros rhoncus pellentesque. Vivamus blandit imperdiet leo, vel semper enim laoreet vitae. Duis vitae risus id lorem rhoncus mattis vel sed ligula. Nunc lobortis vestibulum nulla id placerat.",
+         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec libero eget arcu scelerisque finibus. Quisque quis cursus nibh, eu egestas neque. Vivamus interdum nibh non lorem placerat fermentum. Donec enim odio, fringilla et tincidunt ut, blandit ornare dui. Nunc hendrerit auctor magna imperdiet commodo. Cras non sapien felis. Duis et porttitor nunc, nec ultrices magna. Nulla tortor nunc, ullamcorper id nunc nec, tincidunt molestie nisl. Aliquam erat volutpat. Sed eget pharetra est. Etiam sit amet odio tortor.",
          solution: {
             "Etiam": "adverb",
-            "semper": "adverb",
             "libero": "adjective",
             "magna": "adjective",
             "nulla": "adjective",
