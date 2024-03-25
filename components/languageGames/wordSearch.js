@@ -62,7 +62,7 @@ function WordSearch({ language }) {
          <div className={styles.grid}>
             {renderGrid()}
          </div>
-         <Button label={"Reset"} onClick={resetGrid} />
+         <Button label={"Reset"} onClick={resetGrid} disabled={!grid.find(row => row.includes(1))} />
       </>
    )
 }
