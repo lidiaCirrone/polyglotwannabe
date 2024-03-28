@@ -29,7 +29,7 @@
 
    /* wordle */
    --wordle-yes: #5ac85a;
-   --wordle-almost:#a1a1a1;
+   --wordle-almost: #a1a1a1;
    --wordle-no: #e2cc68;
 
    color: var(--primary);
@@ -63,12 +63,6 @@ html,
 body, ul {
    padding: 0;
    margin: 0;
-}
-
-h2 {
-   text-transform: uppercase;
-   letter-spacing: .2rem;
-   word-spacing: 1rem;
 }
 
 a {
@@ -106,6 +100,12 @@ input {
    justify-content: space-between;
 }
 
+.game-box .instructions h2 {
+   text-transform: uppercase;
+   letter-spacing: .2rem;
+   word-spacing: 1rem;
+}
+
 
 .instructions>div p {
    white-space: pre-wrap;
@@ -129,9 +129,11 @@ input {
    .game-box {
       flex-direction: row;
    }
+
    .instructions, .game {
       flex: 1;
    }
+
    .instructions>div, .game>div {
       padding: 2rem;
    }
@@ -187,6 +189,7 @@ header {
    .container {
       flex-direction: row;
    }
+
    header, main {
       padding: 3em;
    }
@@ -231,8 +234,10 @@ header * {
 }
 
 .unselectable {
-   -webkit-user-select: none; /* Safari */
-   -ms-user-select: none; /* IE 10+ */
+   -webkit-user-select: none;
+   /* Safari */
+   -ms-user-select: none;
+   /* IE 10+ */
    user-select: none;
 }
 
