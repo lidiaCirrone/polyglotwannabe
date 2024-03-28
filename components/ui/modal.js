@@ -23,7 +23,7 @@ export default function Modal({ children, onClose }) {
                   <div className={clsx(styles["modal"], nunito.className)}>
                      {children}
                      <button type="button" onClick={onClose}>
-                        Close Modal
+                        Continue
                      </button>
                   </div>
                   <style jsx>{`
