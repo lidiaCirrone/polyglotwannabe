@@ -1,4 +1,5 @@
 // components
+import Button from "./button";
 import ClientOnlyPortal from "../clientOnlyPortal";
 
 // modules
@@ -22,9 +23,7 @@ export default function Modal({ children, onClose }) {
                <div className={styles["backdrop"]}>
                   <div className={clsx(styles["modal"], nunito.className)}>
                      {children}
-                     <button type="button" onClick={onClose}>
-                        Continue
-                     </button>
+                     <Button label="Continue" onClick={onClose} />
                   </div>
                   <style jsx>{`
                      :global(body) {
