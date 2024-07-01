@@ -128,7 +128,7 @@ export const languageGames = {
          // solutions: [
          //    { id: 1, word: "langue" }
          // ],
-         credits: <>Basé sur <a target="_blank" href="https://www.nytimes.com/games/wordle">Wordle</a><br /><a href="https://iconscout.com/icons/enter-key" class="text-underline font-size-sm" target="_blank">touche Entrée</a> par <a href="https://iconscout.com/contributors/dinosoftlabs" class="text-underline font-size-sm">Dinosoft Lab</a> et <a href="https://iconscout.com/icons/backspace" class="text-underline font-size-sm" target="_blank">touche Retour</a> par <a href="https://iconscout.com/contributors/yoyonpujiono" class="text-underline font-size-sm">Iconion</a> sur <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a></>
+         credits: <>Basé sur <a target="_blank" href="https://www.nytimes.com/games/wordle">Wordle</a><br /><a href="https://iconscout.com/icons/enter-key" className="text-underline font-size-sm" target="_blank">touche Entrée</a> par <a href="https://iconscout.com/contributors/dinosoftlabs" className="text-underline font-size-sm">Dinosoft Lab</a> et <a href="https://iconscout.com/icons/backspace" className="text-underline font-size-sm" target="_blank">touche Retour</a> par <a href="https://iconscout.com/contributors/yoyonpujiono" className="text-underline font-size-sm">Iconion</a> sur <a href="https://iconscout.com" className="text-underline font-size-sm">IconScout</a></>
       }
    },
    "spanish": {
