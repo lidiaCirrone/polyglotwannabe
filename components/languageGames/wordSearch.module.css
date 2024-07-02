@@ -5,6 +5,7 @@
    display: grid;
    width: 100%;
    max-width: 500px;
+   gap: 2px;
 }
 
 .cell {
@@ -14,6 +15,11 @@
    aspect-ratio: 1;
    border: 1px solid #f3f3f3;
    cursor: pointer;
+   border-radius: 5px;
+}
+
+.cell:hover {
+  background-color: #f3f3f3;
 }
 
 .selected {
