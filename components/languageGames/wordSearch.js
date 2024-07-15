@@ -48,24 +48,23 @@ function WordSearch({ language }) {
    // TO-DO
   //  - gestire quando l'utente ha selezionato una prima lettera e torna indietro
   //  - aggiungere a `currentLetters` solo lettere non ancora presenti
-  //  - in `toggleLetter` usare le nuove variabili invece di quelle di stato
 
    const toggleLetter = (r, c) => () => {
 
     let newCurrentLetters = [...currentLetters]
     let newHovered = [...hoveredTiles]
-    if (!currentLetters.length){
+    if (!newCurrentLetters.length){
       // first click, sets first letter
       newCurrentLetters = [{r,c}]
-    } else if (currentLetters.length === 1) {
+    } else if (newCurrentLetters.length === 1) {
       // second click
-      const firstLetter = currentLetters[0]
+      const firstLetter = newCurrentLetters[0]
       let newAllSelectedLetters = [...allSelectedLetters]
       let newSelectedIds = [...selectedIds]
       if (firstLetter.r === r && firstLetter.c === c) {
         // if first and second letter match, means that the user changed their mind so need to remove them
-        for (let i = 0; i < currentLetters.length; i++) {
-          const current = currentLetters[i];
+        for (let i = 0; i < newCurrentLetters.length; i++) {
+          const current = newCurrentLetters[i];
           let foundLetterIndex = newAllSelectedLetters.findIndex(selected => selected.r === current.r && selected.c === current.c)
           newAllSelectedLetters.splice(foundLetterIndex, 1)
           let foundIdIndex = newSelectedIds.findIndex(id => id === `tile-${r}-${c}`)
