@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 
 // components
 import Button from '../ui/button';
@@ -39,6 +39,12 @@ function WordSearch({ language }) {
   //  const [selectedTiles, setSelectedTiles] = useState([])
    const [hoveredTiles, setHoveredTiles] = useState([])
   //  const [currentDirection, setCurrentDirection] = useState(null)
+
+  useEffect(() => console.log("\n\n grid", grid))
+  useEffect(() => console.log("currentLetters", currentLetters))
+  useEffect(() => console.log("allSelectedLetters", allSelectedLetters))
+  useEffect(() => console.log("selectedIds", selectedIds))
+  useEffect(() => console.log("hoveredTiles", hoveredTiles))
 
    const isCurrentlyHovered = (r,c) => {
     if( !hoveredTiles.length) return false
