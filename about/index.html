@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polyglot Wannabe – about</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" defer>
+      import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
+      polyfillCountryFlagEmojis();
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="intro">
+        <img src="picture.jpg" class="picture" alt="picture of me" />
+        <p class="italic">
+          90% of my body is made of tea, the rest is foreign languages, music
+          and insecurities
+        </p>
+      </div>
+      <section>
+        <p class="bio-row">
+          <a
+            href="https://www.linkedin.com/company/myedu-digital"
+            target="_blank"
+            >MyEdu</a
+          >, <span class="bold">Frontend Developer</span></p>
+        <p class="bio-row italic small">Apr 2024 - Present</p>
+        <p class="bio-row">
+          Rebuilding an educational platform in Next.js, TypeScript and Tailwind
+          CSS. Developing custom plugins for CKEditor to manage the rich-text
+          editors used to create and edit lessons content. Creating scripts in
+          Node.js to add pre-commit hooks for Git and using Valibot to validate
+          form inputs.
+        </p>
+      </section>
+      <p class="subheading mt-2 text-left">
+        ... more on <a
+          href="https://www.linkedin.com/in/lidiacirrone/?locale=en_US"
+          target="_blank"
+          >linkedin</a> and <a
+          href="https://github.com/lidiaCirrone"
+          target="_blank"
+          >github</a>
+      </p>
+      <nav>
+        <a href="/">home</a> <a href="/about">about</a> <a href="/now">now</a>
+      </nav>
+    </main>
+  </body>
+</html>

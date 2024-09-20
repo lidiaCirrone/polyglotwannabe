@@ -1,0 +1,119 @@
+html, body {
+  height: 100%;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+  background-color: #000e19;
+   padding: 0 2em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6, p, nav {
+  font-family: "Work Sans", sans-serif;
+  color: white;
+}
+
+main {
+   max-width: 500px;
+   display: flex;
+   flex-direction: column;
+}
+
+p {
+   color: white;
+   text-align: center;
+   cursor: default;
+   font-optical-sizing: auto;
+   font-weight: 300;
+   font-style: normal;
+}
+
+p.heading {
+   font-family: "Twemoji Country Flags", "Work Sans", Georgia, 'Times New Roman', Times, serif;
+   font-size: 1.3em;
+}
+
+p.subheading {
+   font-family: "Twemoji Country Flags", "Work Sans", Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
+}
+
+nav {
+  display: flex;
+  gap: 2em;
+  margin-top: 3em;
+  justify-content: center;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline #39bdff;
+  font-style: italic;
+  text-underline-offset: 0.3em;
+  font-weight: 500;
+}
+
+nav a {
+  color: #39bdff;
+  text-decoration: none;
+  font-style: normal;
+}
+
+a:hover {
+  text-decoration: underline white;
+  text-underline-offset: 0.3em;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+
+.picture {
+  max-width: 110px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  filter: grayscale();
+}
+
+.bio-row {
+  margin: 0;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+/* Utilities Tailwind-like */
+
+.bold {
+  font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.leading-6 {
+  line-height: 1.5em;
+}
+
+.mt-2 {
+  margin-top: 2em;
+}
+
+.mb-3 {
+  margin-bottom: 3em;
+}
+
+.small {
+  font-size: .8em;
+}
+
+.text-left {
+  text-align: left;
+}
