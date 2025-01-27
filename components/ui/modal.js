@@ -5,16 +5,15 @@ import ClientOnlyPortal from "../clientOnlyPortal";
 // modules
 import clsx from "clsx";
 
-// redux
-import { useSelector } from "react-redux";
+// store
+import { useMainContext } from "@/store/MainProvider";
 
 // styles
 import styles from './ui.module.css'
 import { nunito } from "@/styles/font";
 
 export default function Modal({ children, onClose }) {
-
-   const showModal = useSelector(state => state.user.showModal);
+  const {showModal} = useMainContext()
 
    return (
       <>

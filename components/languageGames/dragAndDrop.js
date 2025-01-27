@@ -1,7 +1,8 @@
+'use client'
+
 import { useEffect, useState } from "react";
 
 // modules
-import { useRouter } from "next/router";
 import clsx from "clsx";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 
@@ -11,6 +12,7 @@ import styles from './dragAndDrop.module.css'
 //utils
 import { languageGames } from "@/utils/globalVariables";
 import { shuffle } from "@/utils/playing";
+import { useRouter } from "next/navigation";
 
 // Thanks to Robin Wieruch's tutorial: https://www.robinwieruch.de/react-drag-and-drop/
 
@@ -37,9 +39,7 @@ function DragAndDrop({ language }) {
       if (verify) {
          setTimeout(() => {
             alert("CORRECT!")
-            router.push({
-               pathname: "/hello",
-            })
+            router.push("/hello")
          }, 250);
       }
    }

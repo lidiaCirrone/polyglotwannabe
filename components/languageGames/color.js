@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from "react";
 
 // components
@@ -5,17 +7,18 @@ import Button from "../ui/button";
 
 // modules
 import clsx from "clsx";
-import { useRouter } from 'next/router'
 
 // styles
 import styles from "./color.module.css"
 
 // utils
 import { createColorGameSolution, languageGames } from "@/utils/globalVariables";
+import { useRouter } from "next/navigation";
 
 function Color({ language }) {
 
-   const router = useRouter();
+  const router = useRouter()
+
    const gameData = languageGames[language.slug].data;
    const { colors } = gameData;
 
@@ -65,9 +68,7 @@ function Color({ language }) {
       if (missingWords.length === 0) {
          setTimeout(() => {
             alert("CORRECT!")
-            router.push({
-               pathname: "/hello",
-            })
+            router.push("/hello")
          }, 250);
       }
    }, [state.words])

@@ -3,15 +3,15 @@ import React from 'react';
 // modules
 import clsx from 'clsx';
 
-// modules
-import { useSelector } from 'react-redux';
+// store
+import { useMainContext } from "@/store/MainProvider";
 
 // styles
 import styles from '../widgets.module.css'
 
 function NewsArticle({ article }) {
 
-   const language = useSelector((state) => state.user.language);
+   const {language} = useMainContext()
    let options = {
       weekday: 'long',
       year: 'numeric',

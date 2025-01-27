@@ -1,3 +1,5 @@
+'use client'
+
 import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 
 // components
@@ -5,7 +7,6 @@ import Button from '../ui/button';
 
 // modules
 import clsx from 'clsx';
-import { useRouter } from 'next/router'
 
 // styles
 import styles from './wordSearch.module.css'
@@ -19,7 +20,6 @@ const GRID_COLUMNS = 13;
 
 function WordSearch({ language }) {
 
-   const router = useRouter();
    const gameItem = languageGames[language.slug];
    const { matrix, indicator } = gameItem.data;
    const emptyGrid = useMemo(() => generateWordsGrid(GRID_ROWS, GRID_COLUMNS), [])

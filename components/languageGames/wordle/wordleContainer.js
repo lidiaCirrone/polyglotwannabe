@@ -1,3 +1,4 @@
+'use client'
 
 import { languageGames } from "@/utils/globalVariables";
 import { useEffect, useState } from "react";
