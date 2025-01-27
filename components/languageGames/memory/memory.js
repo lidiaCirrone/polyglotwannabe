@@ -1,10 +1,9 @@
+'use client'
+
 import { useEffect, useState } from 'react';
 
 // components
 import FlippableCard from './flippableCard';
-
-// modules
-import { useRouter } from 'next/router'
 
 // styles
 import styles from './memory.module.css'
@@ -12,6 +11,7 @@ import styles from './memory.module.css'
 // utils
 import { languageGames } from '@/utils/globalVariables';
 import { shuffle } from '@/utils/playing';
+import { useRouter } from 'next/navigation';
 
 // Thanks to The Net Ninja tutorial: https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm
 
@@ -40,9 +40,7 @@ function Memory({ language }) {
       if (cards.length !== 0 && matchedCards.length === cards.length) {
          setTimeout(() => {
             alert("CORRECT!")
-            router.push({
-               pathname: "/hello",
-            })
+            router.push("/hello")
          }, 1000);
       }
    }, [cards])

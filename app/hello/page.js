@@ -1,20 +1,11 @@
 // components
-import Layout from '@/components/layout';
 import NavigationBar from '@/components/ui/navigationBar';
 import DuolingoWidget from '@/components/widgets/duolingoWidget';
-import NewsWidget from '@/components/widgets/newsWidget/newsWidget';
-
-// redux
-import { useSelector } from 'react-redux';
-
-// utils
-import Link from 'next/link';
+// import NewsWidget from '@/components/widgets/newsWidget/newsWidget';
 
 export default function Hello() {
-   const language = useSelector((state) => state.user.language);
 
    return (
-      <Layout>
          <div className='absolute'>
             <div className='container min-h-100'>
                <header>
@@ -30,7 +21,6 @@ export default function Hello() {
                </main>
             </div>
          </div>
-      </Layout>
    )
 
    //    return (<div className={"margin"}>

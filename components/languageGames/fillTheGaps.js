@@ -1,10 +1,11 @@
+'use client'
+
 import { useState } from "react";
 
 // components
 import Button from "../ui/button";
 
 // modules
-import { useRouter } from "next/router";
 import clsx from "clsx";
 
 // styles
@@ -12,6 +13,7 @@ import styles from "./fillTheGaps.module.css"
 
 // utils
 import { createFillTheGapsGameSolution, languageGames } from "@/utils/globalVariables";
+import { useRouter } from "next/navigation";
 
 function mapWords(array) {
    return array.map(
@@ -62,9 +64,7 @@ function FillTheGaps({ language }) {
       if (Object.values(state.answers).join(";") === Object.values(state.solution).join(";")) {
          setTimeout(() => {
             alert("CORRECT!")
-            router.push({
-               pathname: "/hello",
-            })
+            router.push("/hello")
          }, 250);
       } else {
          setTimeout(() => {

@@ -1,26 +1,26 @@
+'use client'
+
 // modules
 import clsx from 'clsx'
-import { useRouter } from 'next/router';
 
-// redux
-import { useDispatch } from 'react-redux';
-import { setLanguage } from '@/features/user/userSlice';
+// store
+import { useMainContext } from '@/store/MainProvider';
 
 // styles
 import styles from './languageTiles.module.css'
 
 // utils
 import { languages } from '@/utils/globalVariables'
+import { useRouter } from 'next/navigation';
 
 export default function LanguageTiles() {
-   const router = useRouter();
-   const dispatch = useDispatch();
+  const router = useRouter()
+  const {updateLanguage} = useMainContext()
 
    const goTo = (newLanguage) => () => {
-      dispatch(setLanguage(newLanguage));
-      router.push({
-         pathname: `/games/${newLanguage.slug}`,
-      })
+    console.log("\n\n goTo", newLanguage)
+    updateLanguage(newLanguage.slug);
+      router.push( `/games/${newLanguage.slug}`)
    }
 
    function renderLanguageTile(language, index) {

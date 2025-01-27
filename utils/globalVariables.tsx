@@ -1,3 +1,4 @@
+
 import Color from "@/components/languageGames/color"
 import DragAndDrop from "@/components/languageGames/dragAndDrop"
 import FillTheGaps from "@/components/languageGames/fillTheGaps"
@@ -64,7 +65,9 @@ export const languages = [
    },
 ]
 
-export function getLanguage(slug) {
+export type Language = typeof languages[0]
+
+export function getLanguage(slug: string) {
    return languages.find(item => item.slug === slug)
 }
 

@@ -6,11 +6,11 @@ import { NEWS_API_KEY } from '@/services/config';
 // components
 import NewsArticle from './newsArticle';
 
+// store
+import { useMainContext } from "@/store/MainProvider";
+
 // styles
 import styles from '../widgets.module.css'
-
-// utils
-import { useSelector } from 'react-redux';
 
 async function getNews(languageCode) {
    let url = `https://newsapi.org/v2/top-headlines?language=${languageCode}&apiKey=${NEWS_API_KEY}&pageSize=3`;
@@ -19,7 +19,7 @@ async function getNews(languageCode) {
 
 export default function NewsWidget() {
 
-   const language = useSelector((state) => state.user.language);
+   const {language} = useMainContext()
    const [news, setNews] = useState([]);
 
    useEffect(() => {

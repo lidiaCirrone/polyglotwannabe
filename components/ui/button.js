@@ -1,5 +1,7 @@
+'use client'
+
 // modules
-import { useRouter } from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 // styles
 import styles from './ui.module.css'
@@ -7,13 +9,12 @@ import clsx from 'clsx';
 
 export default function Button({ href, label, query, onClick, disabled = false }) {
    const router = useRouter();
+   const searchParams = useSearchParams()
 
    const goTo = () => {
-      let args = {
-         pathname: `${href}`,
-      }
-      if (query) args.query = query;
-      router.push(args)
+      console.log("new URLSearchParams(searchParams.toString())", new URLSearchParams(searchParams.toString()))
+      if (searchParams) args.query = query;
+      router.push(`${href}`)
    }
 
    return (

@@ -1,10 +1,11 @@
+'use client'
+
 import React, { useEffect, useState } from 'react';
 
 // components
 import Button from '../ui/button';
 
 // modules
-import { useRouter } from 'next/router'
 import clsx from 'clsx';
 
 // styles
@@ -13,6 +14,7 @@ import styles from './wordOrder.module.css'
 // utils
 import { languageGames } from '@/utils/globalVariables';
 import { shuffle } from '@/utils/playing';
+import { useRouter } from 'next/navigation';
 
 function WordOrder({ language }) {
 
@@ -46,9 +48,7 @@ function WordOrder({ language }) {
          if (updatedWords.length === 0) {
             if (updatedChosenWords.join(" ") === gameItem.data.solution) {
                alert("CORRECT!")
-               router.push({
-                  pathname: "/hello",
-               })
+               router.push("/hello")
             } else {
                alert("try again :(")
                resetState();

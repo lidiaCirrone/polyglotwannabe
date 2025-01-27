@@ -1,20 +1,23 @@
+'use client'
+
 //components
 import Link from 'next/link'
 
 // modules
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
+
+// store
+import { useMainContext } from "@/store/MainProvider";
 
 // styles
 import styles from './ui.module.css'
-import { useDispatch } from 'react-redux';
-import { setShowModal } from '@/features/user/userSlice';
 
 export default function NavigationBar() {
    const router = useRouter();
-   const dispatch = useDispatch();
+   const {updateShowModal} = useMainContext()
 
    function goBack() {
-      dispatch(setShowModal(false));
+      updateShowModal(false)
       router.back();
    }
    return (
